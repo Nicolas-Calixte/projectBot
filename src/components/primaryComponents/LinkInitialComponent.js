@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import { NavLink, Nav, NavItem } from "react-bootstrap";
+import { NavLink } from "react-bootstrap";
 
-const Link = (props) => {
+const LinkInitialComponent = (props) => {
   const { to, linkName } = props;
 
   return (
@@ -13,4 +13,4 @@ const Link = (props) => {
   );
 };
 
-export default Link;
+export default LinkInitialComponent;

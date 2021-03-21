@@ -6,6 +6,7 @@ import LogInPage from "./pages/LogInPage";
 import SignUpPage from "./pages/SignUpPage";
 import ResetEmailPage from "./pages/ResetEmailPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
+import SubscribeOptionsPage from "./pages/SubscribeOptionsPage";
 
 const App = () => {
   return (
@@ -17,7 +18,11 @@ const App = () => {
             <Route exact path="/sign-up" component={SignUpPage} />
             <Route exact path="/reset-email" component={ResetEmailPage} />
             <Route exact path="/reset-password" component={ResetPasswordPage} />
-            <Route exact path="/subscribe-options" component={} />
+            <Route
+              exact
+              path="/subscribe-options"
+              component={SubscribeOptionsPage}
+            />
           </Switch>
         </Router>
       </div>

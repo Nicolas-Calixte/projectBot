@@ -1,9 +1,11 @@
 import React from "react";
 
-import Link from "./primaryComponents/Link";
+import LinkInitialComponent from "./primaryComponents/LinkInitialComponent";
 
 const LinkForgotPassword = () => {
-  return <Link to="/resetPassword" linkName="Mot de passe oublié" />;
+  return (
+    <LinkInitialComponent to="/resetPassword" linkName="Mot de passe oublié" />
+  );
 };
 
 export default LinkForgotPassword;
