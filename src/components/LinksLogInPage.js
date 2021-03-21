@@ -1,8 +1,8 @@
 import React from "react";
+import { Nav, NavItem } from "react-bootstrap";
 
 import LinkForgotPassword from "./LinkForgotPassword";
 import LinkForgotEmail from "./LinkForgotEmail";
-import { Nav, NavItem } from "react-bootstrap";
 
 const LinksLogInPage = () => {
   return (

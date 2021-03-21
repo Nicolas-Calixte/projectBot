@@ -7,3 +7,5 @@ export const Provider = (props) => {
 };
 
 const Context = createContext();
+
+export default Context;
