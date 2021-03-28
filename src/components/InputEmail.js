@@ -5,7 +5,8 @@ import Input from "./primaryComponents/Input";
 const InputEmail = () => {
   return (
     <Input
-      label="Adresse e-mail"
+      controlId="formBasicEmail"
+      label="Adresse email"
       type="email"
       placeholder="Rentrez votre adresse email"
     />

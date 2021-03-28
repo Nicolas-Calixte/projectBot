@@ -1,7 +1,6 @@
-import React from "react";
-import { Form, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Form, FormGroup, FormLabel, FormControl } from "react-bootstrap";
 
-const Input = (props) => {
+const mainForm = (props) => {
   const { controlId, label, type, placeholder } = props;
 
   return (
@@ -14,4 +13,4 @@ const Input = (props) => {
   );
 };
 
-export default Input;
+export default mainForm;
