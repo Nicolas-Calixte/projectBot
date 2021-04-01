@@ -1,8 +1,8 @@
-import React from "react";
-import { Form, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import React from "react"
+import { Form, FormGroup, FormControl, FormLabel } from "react-bootstrap"
 
 const Input = (props) => {
-  const { controlId, label, type, placeholder } = props;
+  const { controlId, label, type, placeholder } = props
 
   return (
     <Form>
@@ -11,7 +11,7 @@ const Input = (props) => {
         <FormControl type={type} placeholder={placeholder} />
       </FormGroup>
     </Form>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

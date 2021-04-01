@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import Input from "./primaryComponents/Input";
+import Input from "./primaryComponents/Input"
 
 const InputEmail = () => {
   return (
@@ -10,7 +10,7 @@ const InputEmail = () => {
       type="email"
       placeholder="Rentrez votre adresse email"
     />
-  );
-};
+  )
+}
 
-export default InputEmail;
+export default InputEmail

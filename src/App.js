@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
-import { Provider } from "./components/Context";
-import LogInPage from "./pages/LogInPage";
-import SignUpPage from "./pages/SignUpPage";
-import ResetEmailPage from "./pages/ResetEmailPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
-import SubscribeOptionsPage from "./pages/SubscribeOptionsPage";
+import { Provider } from "./components/Context"
+import LogInPage from "./pages/LogInPage"
+import SignUpPage from "./pages/SignUpPage"
+import ResetEmailPage from "./pages/ResetEmailPage"
+import ResetPasswordPage from "./pages/ResetPasswordPage"
+import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
         </Router>
       </div>
     </Provider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
-import LinkInitialComponent from "./primaryComponents/LinkInitialComponent";
+import LinkInitialComponent from "./primaryComponents/LinkInitialComponent"
 
 const LinkForgotEmail = () => {
   return (
     <LinkInitialComponent to="/resetEmail" linkName="Identifiant oublié" />
-  );
-};
+  )
+}
 
-export default LinkForgotEmail;
+export default LinkForgotEmail

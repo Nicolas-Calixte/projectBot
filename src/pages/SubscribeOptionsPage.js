@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const SubscribeOptionsPage = () => {
-  return null;
-};
+  return null
+}
 
-export default SubscribeOptionsPage;
+export default SubscribeOptionsPage

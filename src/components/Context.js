@@ -1,11 +1,11 @@
-import React, { createContext } from "react";
+import React, { createContext } from "react"
 
 export const Provider = (props) => {
-  const logInHandleClick = () => null;
+  const logInHandleClick = () => null
 
-  return <Context.Provider {...props} value={{ logInHandleClick }} />;
-};
+  return <Context.Provider {...props} value={{ logInHandleClick }} />
+}
 
-const Context = createContext();
+const Context = createContext()
 
-export default Context;
+export default Context

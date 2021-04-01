@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 
-import ConnexionTitle from "../components/ConnexionTitle";
-import InputLogInPage from "../components/ConnexionTitle";
-import ButtonLogIn from "../components/ButtonLogIn";
-import CreateAccountLine from "../components/CreateAccountLine";
-import LinksLogInPage from "../components/LinksLogInPage";
+import ConnexionTitle from "../components/ConnexionTitle"
+import InputLogInPage from "../components/ConnexionTitle"
+import ButtonLogIn from "../components/ButtonLogIn"
+import CreateAccountLine from "../components/CreateAccountLine"
+import LinksLogInPage from "../components/LinksLogInPage"
 
 const LogInPage = () => {
   return (
@@ -15,7 +15,7 @@ const LogInPage = () => {
       <ButtonLogIn />
       <LinksLogInPage />
     </div>
-  );
-};
+  )
+}
 
-export default LogInPage;
+export default LogInPage

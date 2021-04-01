@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const ResetEmailPage = () => {
-  return null;
-};
+  return null
+}
 
-export default ResetEmailPage;
+export default ResetEmailPage

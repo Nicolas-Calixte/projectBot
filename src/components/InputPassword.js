@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-import Input from "./primaryComponents/Input";
+import Input from "./primaryComponents/Input"
 
 const InputPassword = () => {
   return (
@@ -10,7 +10,7 @@ const InputPassword = () => {
       type="password"
       placeholder="Rentrez votre mot de passe"
     />
-  );
-};
+  )
+}
 
-export default InputPassword;
+export default InputPassword

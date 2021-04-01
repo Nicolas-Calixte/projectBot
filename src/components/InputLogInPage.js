@@ -1,8 +1,8 @@
-import React from "react";
-import { Form } from "react-bootstrap";
+import React from "react"
+import { Form } from "react-bootstrap"
 
-import InputEmail from "./InputEmail";
-import InputPassword from "./InputPassword";
+import InputEmail from "./InputEmail"
+import InputPassword from "./InputPassword"
 
 const InputLogInPage = () => {
   return (
@@ -10,7 +10,7 @@ const InputLogInPage = () => {
       <InputEmail />
       <InputPassword />
     </Form>
-  );
-};
+  )
+}
 
-export default InputLogInPage;
+export default InputLogInPage

@@ -1,8 +1,8 @@
-import React from "react";
-import { Nav, NavItem } from "react-bootstrap";
+import React from "react"
+import { Nav, NavItem } from "react-bootstrap"
 
-import LinkForgotPassword from "./LinkForgotPassword";
-import LinkForgotEmail from "./LinkForgotEmail";
+import LinkForgotPassword from "./LinkForgotPassword"
+import LinkForgotEmail from "./LinkForgotEmail"
 
 const LinksLogInPage = () => {
   return (
@@ -14,7 +14,7 @@ const LinksLogInPage = () => {
         <LinkForgotEmail />
       </NavItem>
     </Nav>
-  );
-};
+  )
+}
 
-export default LinksLogInPage;
+export default LinksLogInPage
