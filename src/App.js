@@ -11,21 +11,19 @@ import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 const App = () => {
   return (
     <Provider>
-      <div>
-        <Router>
-          <Switch>
-            <Route exact path="/log-in" component={LogInPage} />
-            <Route exact path="/sign-up" component={SignUpPage} />
-            <Route exact path="/reset-email" component={ResetEmailPage} />
-            <Route exact path="/reset-password" component={ResetPasswordPage} />
-            <Route
-              exact
-              path="/subscribe-options"
-              component={SubscribeOptionsPage}
-            />
-          </Switch>
-        </Router>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/log-in" component={LogInPage} />
+          <Route exact path="/sign-up" component={SignUpPage} />
+          <Route exact path="/reset-email" component={ResetEmailPage} />
+          <Route exact path="/reset-password" component={ResetPasswordPage} />
+          <Route
+            exact
+            path="/subscribe-options"
+            component={SubscribeOptionsPage}
+          />
+        </Switch>
+      </Router>
     </Provider>
   )
 }
