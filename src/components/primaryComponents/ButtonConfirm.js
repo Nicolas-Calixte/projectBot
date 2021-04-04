@@ -3,12 +3,12 @@ import { Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 const ButtonConfirm = (props) => {
-  const { to, onClick } = props
+  const { to, onClick, btnName } = props
 
   return (
     <Link to={to}>
       <Button variant="info" onClick={onClick}>
-        CONFIRMER
+        {btnName}
       </Button>
     </Link>
   )

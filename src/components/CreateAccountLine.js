@@ -1,12 +1,12 @@
 import React from "react"
 
-import LinkInitialComponent from "./primaryComponents/LinkInitialComponent"
+import mainLink from "./primaryComponents/mainLink"
 
 const CreateAccountLine = () => {
   return (
     <p>
       Vous ne possédez pas de compte ?
-      <LinkInitialComponent to="/sign-up" linkName=" Inscrivez-vous" /> !
+      <mainLink to="/sign-up" linkName=" Inscrivez-vous" /> !
     </p>
   )
 }

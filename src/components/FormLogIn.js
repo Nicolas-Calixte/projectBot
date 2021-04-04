@@ -2,7 +2,7 @@ import React from "react"
 import { Form } from "react-bootstrap"
 import mainFormGroup from "./primaryComponents/mainFormGroup"
 
-const InputLogInPage = () => {
+const FormLogIn = () => {
   return (
     <div>
       <Form variant="info">
@@ -24,4 +24,4 @@ const InputLogInPage = () => {
   )
 }
 
-export default InputLogInPage
+export default FormLogIn

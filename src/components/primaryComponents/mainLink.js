@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { NavLink } from "react-bootstrap"
 
-const LinkInitialComponent = (props) => {
+const mainLink = (props) => {
   const { to, linkName } = props
 
   return (
@@ -13,4 +13,4 @@ const LinkInitialComponent = (props) => {
   )
 }
 
-export default LinkInitialComponent
+export default mainLink

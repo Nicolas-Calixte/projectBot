@@ -1,16 +1,16 @@
 import React from "react"
 
 import ConnexionTitle from "../components/ConnexionTitle"
-import ButtonLogIn from "../components/ButtonLogIn"
+import FormLogIn from "../components/FormLogIn"
 import CreateAccountLine from "../components/CreateAccountLine"
+import ButtonLogIn from "../components/ButtonLogIn"
 import LinksLogInPage from "../components/LinksLogInPage"
-import mainFormGroup from "../components/primaryComponents/mainFormGroup"
 
 const LogInPage = () => {
   return (
     <div>
       <ConnexionTitle />
-      <mainFormGroup />
+      <FormLogIn />
       <CreateAccountLine />
       <ButtonLogIn />
       <LinksLogInPage />
