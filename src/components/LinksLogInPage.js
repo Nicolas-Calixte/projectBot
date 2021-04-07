@@ -1,19 +1,19 @@
 import React from "react"
 import { Nav, NavItem } from "react-bootstrap"
-
-import LinkForgotPassword from "./LinkForgotPassword"
-import LinkForgotEmail from "./LinkForgotEmail"
+import { Link } from "react-router-dom"
 
 const LinksLogInPage = () => {
   return (
-    <Nav>
-      <NavItem>
-        <LinkForgotPassword />
-      </NavItem>
-      <NavItem>
-        <LinkForgotEmail />
-      </NavItem>
-    </Nav>
+    <div>
+      <Nav className="row justify-content-center">
+        <NavItem>
+          <Link to="/resetPassword">Mot de passe oublié</Link>
+        </NavItem>
+        <NavItem>
+          <Link to="/resetEmail">Identifiant oublié</Link>
+        </NavItem>
+      </Nav>
+    </div>
   )
 }
 

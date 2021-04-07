@@ -1,12 +1,11 @@
 import React from "react"
-
-import mainLink from "./primaryComponents/mainLink"
+import { Link } from "react-router-dom"
 
 const CreateAccountLine = () => {
   return (
     <p>
-      Vous ne possédez pas de compte ?
-      <mainLink to="/sign-up" linkName=" Inscrivez-vous" /> !
+      Vous ne possédez pas de compte ? <Link to="/sign-up">Inscrivez-vous</Link>{" "}
+      !
     </p>
   )
 }

@@ -1,24 +1,26 @@
 import React from "react"
-import { Form } from "react-bootstrap"
-import mainFormGroup from "./primaryComponents/mainFormGroup"
+import { Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 
 const FormLogIn = () => {
   return (
     <div>
-      <Form variant="info">
-        <mainFormGroup
-          controlId="formBasicEmail"
-          label="Adresse email"
-          size="lg"
-          type="email"
-          placeholder="Entrez votre email"
-        />
-        <mainFormGroup
-          controlId="formBasicPassword"
-          label="Mot de passe"
-          size="lg"
-          placeholder="Entrez votre mot de passe"
-        />
+      <Form>
+        <FormGroup controlId="formBasicEmail">
+          <FormLabel>Email</FormLabel>
+          <FormControl
+            size="lg"
+            type="email"
+            placeholder="Entrez votre adresse email"
+          />
+        </FormGroup>
+        <FormGroup controlId="formBasicPassword">
+          <FormLabel>Mot de passe</FormLabel>
+          <FormControl
+            size="lg"
+            type="password"
+            placeholder="Entrez votre mot de passe"
+          />
+        </FormGroup>
       </Form>
     </div>
   )
