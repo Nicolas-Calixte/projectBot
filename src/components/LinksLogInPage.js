@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const LinksLogInPage = () => {
   return (
     <div>
-      <Nav className="row justify-content-center">
+      <Nav row className="justify-content-center mt-50">
         <NavItem>
           <Link to="/resetPassword">Mot de passe oublié</Link>
         </NavItem>

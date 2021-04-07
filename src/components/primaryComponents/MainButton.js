@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 const MainButton = (to) => {
   return (
     <Link to={to}>
-      <Button size="lg" variant="info" active>
+      <Button className="align-content-center" size="lg" variant="info" active>
         CONFIRMER
       </Button>
     </Link>
