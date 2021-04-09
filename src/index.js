@@ -4,13 +4,10 @@ import "./index.css"
 import App from "./App"
 import "bootstrap/dist/css/bootstrap.css"
 import reportWebVitals from "./reportWebVitals"
-import { Router } from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 )
