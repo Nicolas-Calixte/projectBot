@@ -8,13 +8,13 @@ const FormSignUp = () => {
         <Form.Row>
           <FormGroup controlId="formGridName">
             <FormLabel>Nom</FormLabel>
-            <FormControl size="md" type="name" placeholder="Entrez votre nom" />
+            <FormControl size="lg" type="name" placeholder="Entrez votre nom" />
           </FormGroup>
 
           <FormGroup controlId="formGridFirstname">
             <FormLabel>Prénom</FormLabel>
             <FormControl
-              size="md"
+              size="lg"
               type="firstname"
               placeholder="Entrez votre prénom"
             />
@@ -25,7 +25,7 @@ const FormSignUp = () => {
           <FormGroup controlId="formGridEmail">
             <FormLabel>Email</FormLabel>
             <FormControl
-              size="md"
+              size="lg"
               type="email"
               placeholder="Entrez votre adresse email"
             />
@@ -34,9 +34,9 @@ const FormSignUp = () => {
           <FormGroup controlId="FormGridPhoneNumber">
             <FormLabel>Numéro de téléphone(optionnel)</FormLabel>
             <FormControl
-              size="md"
+              size="lg"
               type="phone number"
-              placeholder="Entrez votre numéro de téléphone portable"
+              placeholder="Entrez votre numéro de téléphone"
             />
           </FormGroup>
         </Form.Row>
@@ -45,7 +45,7 @@ const FormSignUp = () => {
           <FormGroup controlId="FormGridPassword">
             <FormLabel>Mot de passe</FormLabel>
             <FormControl
-              size="md"
+              size="lg"
               type="password"
               placeholder="Créez votre mot de passe"
             />
@@ -54,7 +54,7 @@ const FormSignUp = () => {
           <FormGroup controlId="FormGridPassword">
             <FormLabel>Confirmez le mot de passe</FormLabel>
             <FormControl
-              size="md"
+              size="lg"
               type="password"
               placeholder="Retapez votre mot de passe"
             />

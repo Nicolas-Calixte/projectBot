@@ -1,8 +1,7 @@
 import React from "react"
-import "bootstrap/dist/css/bootstrap.css"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Route, Switch } from "react-router-dom"
 
-import { Provider } from "./components/Context"
+import HomePage from "./pages/HomePage"
 import LogInPage from "./pages/LogInPage"
 import SignUpPage from "./pages/SignUpPage"
 import ResetEmailPage from "./pages/ResetEmailPage"
@@ -12,21 +11,18 @@ import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 const App = () => {
   return (
     <div>
-      <Provider>
-        <Router>
-          <Switch>
-            <Route exact path="/log-in" component={LogInPage} />
-            <Route exact path="/sign-up" component={SignUpPage} />
-            <Route exact path="/reset-email" component={ResetEmailPage} />
-            <Route exact path="/reset-password" component={ResetPasswordPage} />
-            <Route
-              exact
-              path="/subscribe-options"
-              component={SubscribeOptionsPage}
-            />
-          </Switch>
-        </Router>
-      </Provider>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/login" component={LogInPage} />
+        <Route exact path="/signup" component={SignUpPage} />
+        <Route exact path="/resetemail" component={ResetEmailPage} />
+        <Route exact path="/resetpassword" component={ResetPasswordPage} />
+        <Route
+          exact
+          path="/subscribeoptions"
+          component={SubscribeOptionsPage}
+        />
+      </Switch>
     </div>
   )
 }

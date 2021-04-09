@@ -6,7 +6,13 @@ import FormSignUp from "../components/signUpPageComponents/FormSignUp"
 
 const SignUpPage = () => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
       <MainTitle title="INSCRIPTION" />
       <FormSignUp />
       <MainButton to="/subscribe-options" />

@@ -8,11 +8,13 @@ import LinksLogInPage from "../components/LinksLogInPage"
 
 const LogInPage = () => {
   return (
-    <div>
+    <div
+      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
+    >
       <MainTitle title="CONNEXION" />
       <FormLogIn />
       <CreateAccountLine />
-      <MainButton to="/subscribeOptions" />
+      <MainButton to="/subscribeoptions" />
       <LinksLogInPage />
     </div>
   )

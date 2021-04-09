@@ -5,11 +5,18 @@ import PropTypes from "prop-types"
 
 const MainButton = (to) => {
   return (
-    <Link to={to}>
-      <Button className="align-content-center" size="lg" variant="info" active>
-        CONFIRMER
-      </Button>
-    </Link>
+    <div style={{ marginTop: "20px" }}>
+      <Link to={to}>
+        <Button
+          className="align-content-center"
+          size="lg"
+          variant="info"
+          active
+        >
+          CONFIRMER
+        </Button>
+      </Link>
+    </div>
   )
 }
 
