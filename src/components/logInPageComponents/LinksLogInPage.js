@@ -7,10 +7,10 @@ const LinksLogInPage = () => {
     <div style={{ marginTop: "20px" }}>
       <Nav row className="justify-content-center">
         <NavItem>
-          <Link to="/reset-password">Mot de passe oublié</Link>
+          <Link to="/resetpassword">Mot de passe oublié</Link>
         </NavItem>
         <NavItem>
-          <Link to="/reset-email">Identifiant oublié</Link>
+          <Link to="/resetemail">Identifiant oublié</Link>
         </NavItem>
       </Nav>
     </div>
