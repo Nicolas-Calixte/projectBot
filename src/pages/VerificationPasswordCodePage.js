@@ -7,31 +7,32 @@ import MainButton from "../components/primaryComponents/MainButton"
 import MainFormGroup from "../components/primaryComponents/MainFormGroup"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
-const ResetPasswordPage = () => {
+const VerificationPasswordCodePage = () => {
   const history = useHistory()
 
-  const handleHistory = () => history.push("/login")
+  const handleHistory = () => history.push("/login/resetpassword")
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
+    <div>
       <div>
         <Row>
           <MainBackButton onClick={handleHistory} />
-          <MainTitle size="lg" title="Réinitialisez votre mot de passe" />
+          <MainTitle title="Réinitialisez votre mot de passe" />
         </Row>
       </div>
       <MainFormGroup
-        controlId="email/phone number"
-        label="Identifiant"
+        controlId="basicNumberForm"
+        label="Entrez le code de validation"
         size="md"
-        type="email"
-        placeholder="Entrez votre email ou n° de téléphone"
+        type="code"
+        placeholder="Entrez le code à 6 chiffres"
       />
-      <MainButton to="/login/resetpassword/verificationpasswordcode" />
+      <p>
+        Code non reçu ? <a href="#">Renvoyez le code</a>.
+      </p>
+      <MainButton to="/newpassword" />
     </div>
   )
 }
 
-export default ResetPasswordPage
+export default VerificationPasswordCodePage

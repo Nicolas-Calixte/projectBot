@@ -29,11 +29,14 @@ const ResetEmailPage = () => {
         type="phoneNumber"
         placeholder="Entrez votre n° de téléphone"
       />
-      <p style={{ marginTop: "15px" }}>
+      <p style={{ marginTop: "15px", marginBottom: "0px" }}>
+        Un code de validation va vous être envoyé.
+      </p>
+      <p>
         Vous n&apos;avez pas associé de n° de téléphone à votre compte ?{" "}
         <a href="mailto:nicolascalixte.pro@gmail.com">Contactez le support</a>.{" "}
       </p>
-      <MainButton to="/verificationcode" />
+      <MainButton to="/login/resetemail/verificationemailcode" />
     </div>
   )
 }
