@@ -11,6 +11,7 @@ const SignUpPage = () => {
   const history = useHistory()
 
   const handleHistory = () => history.push("/login")
+  const handleClick = () => history.push("/subscribeoptions")
 
   return (
     <div
@@ -27,7 +28,7 @@ const SignUpPage = () => {
         </Row>
       </div>
       <FormSignUp />
-      <MainButton to="/subscribe-options" />
+      <MainButton onClick={handleClick} />
     </div>
   )
 }

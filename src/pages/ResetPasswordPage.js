@@ -11,6 +11,8 @@ const ResetPasswordPage = () => {
   const history = useHistory()
 
   const handleHistory = () => history.push("/login")
+  const handleClick = () =>
+    history.push("/login/resetpassword/verificationpasswordcode")
 
   return (
     <div
@@ -29,7 +31,7 @@ const ResetPasswordPage = () => {
         type="email"
         placeholder="Entrez votre email ou n° de téléphone"
       />
-      <MainButton to="/login/resetpassword/verificationpasswordcode" />
+      <MainButton onClick={handleClick} />
     </div>
   )
 }

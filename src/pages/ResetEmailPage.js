@@ -11,6 +11,8 @@ const ResetEmailPage = () => {
   const history = useHistory()
 
   const handleHistory = () => history.push("/login")
+  const handleClick = () =>
+    history.push("/login/resetemail/verificationemailcode")
 
   return (
     <div
@@ -36,7 +38,7 @@ const ResetEmailPage = () => {
         Vous n&apos;avez pas associé de n° de téléphone à votre compte ?{" "}
         <a href="mailto:nicolascalixte.pro@gmail.com">Contactez le support</a>.{" "}
       </p>
-      <MainButton to="/login/resetemail/verificationemailcode" />
+      <MainButton onClick={handleClick} />
     </div>
   )
 }

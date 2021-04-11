@@ -11,9 +11,13 @@ const VerificationPasswordCodePage = () => {
   const history = useHistory()
 
   const handleHistory = () => history.push("/login/resetpassword")
+  const handleClick = () =>
+    history.push("/login/resetpassword/verificationpasswordcode/newpassword")
 
   return (
-    <div>
+    <div
+      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
+    >
       <div>
         <Row>
           <MainBackButton onClick={handleHistory} />
@@ -30,7 +34,7 @@ const VerificationPasswordCodePage = () => {
       <p>
         Code non reçu ? <a href="#">Renvoyez le code</a>.
       </p>
-      <MainButton to="/newpassword" />
+      <MainButton onClick={handleClick} />
     </div>
   )
 }

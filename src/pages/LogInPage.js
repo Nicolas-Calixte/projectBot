@@ -1,4 +1,5 @@
 import React from "react"
+import { useHistory } from "react-router"
 
 import FormLogIn from "../components/logInPageComponents/FormLogIn"
 import CreateAccountLine from "../components/logInPageComponents/CreateAccountLine"
@@ -7,6 +8,10 @@ import MainButton from "../components/primaryComponents/MainButton"
 import LinksLogInPage from "../components/logInPageComponents/LinksLogInPage"
 
 const LogInPage = () => {
+  const history = useHistory()
+
+  const handleClick = () => history.push("/subscribeoptions")
+
   return (
     <div
       style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
@@ -14,7 +19,7 @@ const LogInPage = () => {
       <MainTitle title="CONNEXION" />
       <FormLogIn />
       <CreateAccountLine />
-      <MainButton to="/subscribeoptions" />
+      <MainButton onClick={handleClick} />
       <LinksLogInPage />
     </div>
   )

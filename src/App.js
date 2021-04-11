@@ -1,20 +1,15 @@
-import React, { useEffect } from "react"
-import { Route, Switch, useHistory } from "react-router-dom"
+import React from "react"
+import { Route, Switch } from "react-router-dom"
 
 import LogInPage from "./pages/LogInPage"
 import SignUpPage from "./pages/SignUpPage"
-import ResetEmailPage from "./pages/ResetEmailPage"
 import ResetPasswordPage from "./pages/ResetPasswordPage"
-import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 import VerificationPasswordCodePage from "./pages/VerificationPasswordCodePage"
+import CreateNewPasswordPage from "./pages/CreateNewPasswordPage"
+import ResetEmailPage from "./pages/ResetEmailPage"
+import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 
 const App = () => {
-  const history = useHistory()
-
-  useEffect(() => {
-    history.push("/login")
-  }, [])
-
   return (
     <div>
       <Switch>
@@ -27,8 +22,13 @@ const App = () => {
         />
         <Route
           exact
-          path="/login/resetpassword/verificationpassword"
+          path="/login/resetpassword/verificationpasswordcode"
           component={VerificationPasswordCodePage}
+        />
+        <Route
+          exact
+          path="/login/resetpassword/verificationpasswordcode/newpassword"
+          component={CreateNewPasswordPage}
         />
         <Route exact path="/login/resetemail" component={ResetEmailPage} />
         <Route
