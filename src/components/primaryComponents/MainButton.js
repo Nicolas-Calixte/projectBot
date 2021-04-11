@@ -13,7 +13,7 @@ const MainButton = (onClick) => {
 }
 
 MainButton.PropTypes = {
-  onClick: PropTypes.string,
+  onClick: PropTypes.object,
 }
 
 export default MainButton
