@@ -10,7 +10,7 @@ import MainTitle from "../components/primaryComponents/MainTitle"
 const VerificationPasswordCodePage = () => {
   const history = useHistory()
 
-  const handleHistory = () => history.push("/login/resetpassword")
+  const handleHistory = () => history.goBack()
   const handleClick = () =>
     history.push("/login/resetpassword/verificationpasswordcode/newpassword")
 

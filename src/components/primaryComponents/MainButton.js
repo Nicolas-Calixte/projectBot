@@ -13,7 +13,7 @@ const MainButton = (onClick) => {
 }
 
 MainButton.PropTypes = {
-  onClick: PropTypes.object,
+  onClick: PropTypes.boolean,
 }
 
 export default MainButton

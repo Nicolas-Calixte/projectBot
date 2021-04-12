@@ -10,7 +10,7 @@ import FormSignUp from "../components/signUpPageComponents/FormSignUp"
 const SignUpPage = () => {
   const history = useHistory()
 
-  const handleHistory = () => history.push("/login")
+  const handleHistory = () => history.goBack()
   const handleClick = () => history.push("/subscribeoptions")
 
   return (

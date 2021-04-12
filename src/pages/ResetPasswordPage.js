@@ -8,12 +8,11 @@ import MainFormGroup from "../components/primaryComponents/MainFormGroup"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
 const ResetPasswordPage = () => {
-  const goBack = useHistory()
-  const nextPage = useHistory()
+  const history = useHistory()
 
-  const handleHistory = () => goBack.push("/login")
+  const handleHistory = () => history.goBack()
   const handleClick = () =>
-    nextPage.push("/login/resetpassword/verificationpasswordcode")
+    history.push("/login/resetpassword/verificationpasswordcode")
 
   return (
     <div
