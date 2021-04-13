@@ -1,14 +1,14 @@
 import React from "react"
 import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
-import { Redirect } from "react-router"
+import { useHistory } from "react-router"
 
 import MainBackButton from "../components/primaryComponents/MainBackButton"
 import MainButton from "../components/primaryComponents/MainButton"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
 const CreateNewPasswordPage = () => {
+  const history = useHistory()
   const handleHistory = () => history.goBack()
-  const handleClick = () => <Redirect to="/login" />
 
   return (
     <div
@@ -39,7 +39,7 @@ const CreateNewPasswordPage = () => {
           />
         </FormGroup>
       </Form>
-      <MainButton onClick={handleClick} />
+      <MainButton to="/login" />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import { Row } from "react-bootstrap"
+import { useHistory } from "react-router"
 
 import MainBackButton from "../components/primaryComponents/MainBackButton"
 import MainButton from "../components/primaryComponents/MainButton"
@@ -7,9 +8,8 @@ import MainFormGroup from "../components/primaryComponents/MainFormGroup"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
 const ResetPasswordPage = () => {
+  const history = useHistory()
   const handleHistory = () => history.goBack()
-  const handleClick = () =>
-    history.push("/login/resetpassword/verificationpasswordcode")
 
   return (
     <div
@@ -28,7 +28,7 @@ const ResetPasswordPage = () => {
         type="email"
         placeholder="Entrez votre email ou n° de téléphone"
       />
-      <MainButton onClick={handleClick} />
+      <MainButton to="/login/resetpassword/verificationpasswordcode" />
     </div>
   )
 }

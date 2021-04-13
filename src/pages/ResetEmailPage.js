@@ -1,5 +1,6 @@
 import React from "react"
 import { Row } from "react-bootstrap"
+import { useHistory } from "react-router"
 
 import MainBackButton from "../components/primaryComponents/MainBackButton"
 import MainButton from "../components/primaryComponents/MainButton"
@@ -7,9 +8,8 @@ import MainFormGroup from "../components/primaryComponents/MainFormGroup"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
 const ResetEmailPage = () => {
+  const history = useHistory()
   const handleHistory = () => history.goBack()
-  const handleClick = () =>
-    history.push("/login/resetemail/verificationemailcode")
 
   return (
     <div
@@ -35,7 +35,7 @@ const ResetEmailPage = () => {
         Vous n&apos;avez pas associé de n° de téléphone à votre compte ?{" "}
         <a href="mailto:nicolascalixte.pro@gmail.com">Contactez le support</a>.{" "}
       </p>
-      <MainButton onClick={handleClick} />
+      <MainButton to="/login/resetemail/verificationemailcode" />
     </div>
   )
 }
