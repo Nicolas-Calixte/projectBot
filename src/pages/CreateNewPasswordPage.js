@@ -1,16 +1,14 @@
 import React from "react"
 import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
-import { useHistory } from "react-router"
+import { Redirect } from "react-router"
 
 import MainBackButton from "../components/primaryComponents/MainBackButton"
 import MainButton from "../components/primaryComponents/MainButton"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
 const CreateNewPasswordPage = () => {
-  const history = useHistory()
-
   const handleHistory = () => history.goBack()
-  const handleClick = () => history.push("/login")
+  const handleClick = () => <Redirect to="/login" />
 
   return (
     <div
