@@ -8,6 +8,8 @@ import VerificationPasswordCodePage from "./pages/VerificationPasswordCodePage"
 import CreateNewPasswordPage from "./pages/CreateNewPasswordPage"
 import ResetEmailPage from "./pages/ResetEmailPage"
 import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
+import VerificationEmailCodePage from "./pages/VerificationEmailCodePage"
+import NewEmailPage from "./pages/NewEmailPage"
 
 const App = () => {
   const history = useHistory()
@@ -35,6 +37,16 @@ const App = () => {
           component={CreateNewPasswordPage}
         />
         <Route exact path="/login/resetemail" component={ResetEmailPage} />
+        <Route
+          exact
+          path="/login/resetemail/verificationemailcode"
+          component={VerificationEmailCodePage}
+        />
+        <Route
+          exact
+          path="/login/resetemail/verificationemailcode/newemail"
+          component={NewEmailPage}
+        />
         <Route
           exact
           path="/subscribeoptions"
