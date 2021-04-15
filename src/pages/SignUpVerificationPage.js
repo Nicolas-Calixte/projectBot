@@ -4,20 +4,16 @@ import { useHistory } from "react-router"
 
 import MainBackButton from "../components/primaryComponents/MainBackButton"
 import MainButton from "../components/primaryComponents/MainButton"
+import MainFormGroup from "../components/primaryComponents/MainFormGroup"
 import MainTitle from "../components/primaryComponents/MainTitle"
-import FormSignUp from "../components/signUpPageComponents/FormSignUp"
 
-const SignUpPage = () => {
+const SignUpVerificationPage = () => {
   const history = useHistory()
-  const handleHistory = () => history.push("/login")
+  const handleHistory = history.goBack()
 
   return (
     <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
+      style={{ display: "flex", alignItems: "center", flexDirection: "center" }}
     >
       <div>
         <Row>
@@ -25,11 +21,15 @@ const SignUpPage = () => {
           <MainTitle title="INSCRIPTION" />
         </Row>
       </div>
-      <FormSignUp />
-      <p>Un code de validation va être envoyé à votre adresse email.</p>
-      <MainButton to="/signup/signupverification" />
+      <MainFormGroup
+        size="md"
+        controlId="formBasicCode"
+        label="Code de validation"
+        placeholder="Rentrez votre code à 6 chiffres"
+      />
+      <MainButton to="/subscribeoptions" />
     </div>
   )
 }
 
-export default SignUpPage
+export default SignUpVerificationPage

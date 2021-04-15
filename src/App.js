@@ -10,6 +10,7 @@ import ResetEmailPage from "./pages/ResetEmailPage"
 import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 import VerificationEmailCodePage from "./pages/VerificationEmailCodePage"
 import NewEmailPage from "./pages/NewEmailPage"
+import SignUpVerificationPage from "./pages/SignUpVerificationPage"
 
 const App = () => {
   const history = useHistory()
@@ -21,6 +22,11 @@ const App = () => {
       <Switch>
         <Route exact path="/login" component={LogInPage} />
         <Route exact path="/signup" component={SignUpPage} />
+        <Route
+          exact
+          path="/signup/signupverification"
+          component={SignUpVerificationPage}
+        />
         <Route
           exact
           path="/login/resetpassword"

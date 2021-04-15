@@ -39,6 +39,5 @@ const ResetEmailPage = () => {
     </div>
   )
 }
-console.log(MainButton)
 
 export default ResetEmailPage

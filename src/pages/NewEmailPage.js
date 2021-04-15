@@ -3,7 +3,7 @@ import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
 import { useHistory } from "react-router"
 
 import MainBackButton from "../components/primaryComponents/MainBackButton"
-import MainRedirectButton from "../components/primaryComponents/MainRedirectButton"
+import MainButton from "../components/primaryComponents/MainButton"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
 const NewEmailPage = () => {
@@ -11,7 +11,9 @@ const NewEmailPage = () => {
   const handleHistory = history.goBack()
 
   return (
-    <div>
+    <div
+      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
+    >
       <div>
         <Row>
           <MainBackButton onClick={handleHistory} />
@@ -37,9 +39,10 @@ const NewEmailPage = () => {
           />
         </FormGroup>
       </Form>
-      <MainRedirectButton to="/login" />
+      <MainButton to="/login" />
     </div>
   )
 }
 
+console.log(MainButton)
 export default NewEmailPage
