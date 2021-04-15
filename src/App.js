@@ -14,14 +14,12 @@ import SignUpVerificationPage from "./pages/SignUpVerificationPage"
 import Dashboard from "./pages/DashboardPage"
 import Tasks from "./components/dashboardComponents/tasks/Tasks"
 import NewTask from "./components/dashboardComponents/tasks/NewTask"
+import Settings from "./components/dashboardComponents/settings/Settings"
 
 const App = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/dashboard/tasks" component={Tasks} />
-        <Route exact path="/dashboard/tasks/newtask" component={NewTask} />
         <Route exact path="/login" component={LogInPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route
@@ -60,6 +58,10 @@ const App = () => {
           path="/subscribeoptions"
           component={SubscribeOptionsPage}
         />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/dashboard/tasks" component={Tasks} />
+        <Route exact path="/dashboard/tasks/newtask" component={NewTask} />
+        <Route exact path="/dashboard/settings" component={Settings} />
       </Switch>
     </div>
   )

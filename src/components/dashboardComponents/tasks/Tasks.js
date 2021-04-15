@@ -1,7 +1,7 @@
 import { Tab } from "bootstrap"
 import React, { useState } from "react"
 import { Row, Tabs } from "react-bootstrap"
-import { useHistory } from "react-router"
+import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 import MainBackButton from "../../primaryComponents/MainBackButton"
