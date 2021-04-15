@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 
 import MainBackButton from "../../primaryComponents/MainBackButton"
 import MainTitle from "../../primaryComponents/MainTitle"
+import TaskCompleted from "./TaskCompleted"
+import TaskInProgress from "./TaskInProgress"
 
 const Tasks = () => {
   const history = useHistory()
@@ -25,19 +27,21 @@ const Tasks = () => {
         <Link
           className="btn btn-primary btn-lg"
           role="button"
-          style={{ width: "167px", marginBottom: "30px" }}
+          style={{ width: "167px", marginTop: "30px", marginBottom: "30px" }}
           to="/dashboard/tasks/newtask"
           active
         >
           Nouvelle tâche
         </Link>
       </div>
-      <div>
-        <Tabs id="tasks-tabs" activeKey={key} onSelect={(k) => setKey(k)}>
-          <Tab eventKey="tâches-en-cours" title="Tâches en cours"></Tab>
-          <Tab eventKey="tâches-effectuées" title="Tâches effectuées"></Tab>
-        </Tabs>
-      </div>
+      <Tabs id="tasks-tabs" activeKey={key} onSelect={(k) => setKey(k)}>
+        <Tab eventKey="tâches-en-cours" title="Tâches en cours">
+          <TaskInProgress />
+        </Tab>
+        <Tab eventKey="tâches-effectuées" title="Tâches effectuées">
+          <TaskCompleted />
+        </Tab>
+      </Tabs>
     </div>
   )
 }
