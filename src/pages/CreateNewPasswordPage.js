@@ -20,26 +20,36 @@ const CreateNewPasswordPage = () => {
           <MainTitle title="Réinitialisez votre mot de passe" />
         </Row>
       </div>
-      <Form>
-        <FormGroup controlId="formBasicPassword">
-          <FormLabel>Nouveau mot de passe</FormLabel>
-          <FormControl
-            size="lg"
-            type="password"
-            placeholder="Rentrez votre nouveau mot de passe"
-          />
-        </FormGroup>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
+        <Form>
+          <FormGroup controlId="formBasicPassword">
+            <FormLabel>Nouveau mot de passe</FormLabel>
+            <FormControl
+              size="lg"
+              type="password"
+              placeholder="Rentrez votre nouveau mot de passe"
+            />
+          </FormGroup>
 
-        <FormGroup controlId="formBasicPassword">
-          <FormLabel>Confirmez le mot de passe</FormLabel>
-          <FormControl
-            size="lg"
-            type="password"
-            placeholder="Retapez votre mot de passe"
-          />
-        </FormGroup>
-      </Form>
-      <MainButton to="/login" />
+          <FormGroup controlId="formBasicPassword">
+            <FormLabel>Confirmez le mot de passe</FormLabel>
+            <FormControl
+              size="lg"
+              type="password"
+              placeholder="Retapez votre mot de passe"
+            />
+          </FormGroup>
+        </Form>
+        <MainButton to="/login" />
+      </div>
     </div>
   )
 }

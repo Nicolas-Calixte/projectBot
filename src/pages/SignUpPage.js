@@ -25,9 +25,19 @@ const SignUpPage = () => {
           <MainTitle title="INSCRIPTION" />
         </Row>
       </div>
-      <FormSignUp />
-      <p>Un code de validation va être envoyé à votre adresse email.</p>
-      <MainButton to="/signup/signupverification" />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
+        <FormSignUp />
+        <p>Un code de validation va être envoyé à votre adresse email.</p>
+        <MainButton to="/signup/signupverification" />
+      </div>
     </div>
   )
 }

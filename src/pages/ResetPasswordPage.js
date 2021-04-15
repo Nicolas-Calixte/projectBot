@@ -21,14 +21,24 @@ const ResetPasswordPage = () => {
           <MainTitle size="lg" title="Réinitialisez votre mot de passe" />
         </Row>
       </div>
-      <MainFormGroup
-        controlId="email/phone number"
-        label="Identifiant"
-        size="md"
-        type="email"
-        placeholder="Entrez votre email ou n° de téléphone"
-      />
-      <MainButton to="/login/resetpassword/verificationpasswordcode" />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
+        <MainFormGroup
+          controlId="email/phone number"
+          label="Identifiant"
+          size="md"
+          type="email"
+          placeholder="Entrez votre email ou n° de téléphone"
+        />
+        <MainButton to="/login/resetpassword/verificationpasswordcode" />
+      </div>
     </div>
   )
 }

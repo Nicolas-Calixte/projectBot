@@ -20,26 +20,36 @@ const NewEmailPage = () => {
           <MainTitle title="Réinitialisez votre identifiant" />
         </Row>
       </div>
-      <Form>
-        <FormGroup controlId="formBasicEmail">
-          <FormLabel>Rentrez votre nouvel identifiant</FormLabel>
-          <FormControl
-            size="lg"
-            type="email"
-            placeholder="Entrez votre nouvel adresse email"
-          />
-        </FormGroup>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
+        <Form>
+          <FormGroup controlId="formBasicEmail">
+            <FormLabel>Rentrez votre nouvel identifiant</FormLabel>
+            <FormControl
+              size="lg"
+              type="email"
+              placeholder="Entrez votre nouvel adresse email"
+            />
+          </FormGroup>
 
-        <FormGroup controlId="formBasicEmail">
-          <FormLabel>Confirmez votre nouvel identifiant</FormLabel>
-          <FormControl
-            size="lg"
-            type="email"
-            placeholder="Confirmez votre adresse email"
-          />
-        </FormGroup>
-      </Form>
-      <MainButton to="/login" />
+          <FormGroup controlId="formBasicEmail">
+            <FormLabel>Confirmez votre nouvel identifiant</FormLabel>
+            <FormControl
+              size="lg"
+              type="email"
+              placeholder="Confirmez votre adresse email"
+            />
+          </FormGroup>
+        </Form>
+        <MainButton to="/login" />
+      </div>
     </div>
   )
 }

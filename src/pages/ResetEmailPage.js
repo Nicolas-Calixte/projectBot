@@ -21,21 +21,32 @@ const ResetEmailPage = () => {
           <MainTitle size="lg" title="Réinitialisez votre identifiant" />
         </Row>
       </div>
-      <MainFormGroup
-        controlId="basicPhoneNumberForm"
-        label="Entrez le n° de téléphone associé à votre compte"
-        size="md"
-        type="phoneNumber"
-        placeholder="Entrez votre n° de téléphone"
-      />
-      <p style={{ marginTop: "15px", marginBottom: "0px" }}>
-        Un code de validation va vous être envoyé.
-      </p>
-      <p>
-        Vous n&apos;avez pas associé de n° de téléphone à votre compte ?{" "}
-        <a href="mailto:nicolascalixte.pro@gmail.com">Contactez le support</a>.{" "}
-      </p>
-      <MainButton to="/login/resetemail/verificationemailcode" />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
+        <MainFormGroup
+          controlId="basicPhoneNumberForm"
+          label="Entrez le n° de téléphone associé à votre compte"
+          size="md"
+          type="phoneNumber"
+          placeholder="Entrez votre n° de téléphone"
+        />
+        <p style={{ marginTop: "15px", marginBottom: "0px" }}>
+          Un code de validation va vous être envoyé.
+        </p>
+        <p>
+          Vous n&apos;avez pas associé de n° de téléphone à votre compte ?{" "}
+          <a href="mailto:nicolascalixte.pro@gmail.com">Contactez le support</a>
+          .{" "}
+        </p>
+        <MainButton to="/login/resetemail/verificationemailcode" />
+      </div>
     </div>
   )
 }

@@ -21,17 +21,27 @@ const VerificationEmailCodePage = () => {
           <MainTitle title="Réinitialiser votre identifiant" />
         </Row>
       </div>
-      <MainFormGroup
-        controlId="formBasicNumber"
-        size="md"
-        label="Entrez le code de verification reçu"
-        type="code"
-        placeholder="Rentrez votre code à 6 chiffres"
-      />
-      <p>
-        Code non reçu ? <a href="#">Renvoyez un code</a>.
-      </p>
-      <MainButton to="/login/resetemail/verificationemailcode/newemail" />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
+        <MainFormGroup
+          controlId="formBasicNumber"
+          size="md"
+          label="Entrez le code de verification reçu"
+          type="code"
+          placeholder="Rentrez votre code à 6 chiffres"
+        />
+        <p>
+          Code non reçu ? <a href="#">Renvoyez un code</a>.
+        </p>
+        <MainButton to="/login/resetemail/verificationemailcode/newemail" />
+      </div>
     </div>
   )
 }

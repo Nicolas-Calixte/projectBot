@@ -21,13 +21,23 @@ const SignUpVerificationPage = () => {
           <MainTitle title="INSCRIPTION" />
         </Row>
       </div>
-      <MainFormGroup
-        size="md"
-        controlId="formBasicCode"
-        label="Code de validation"
-        placeholder="Rentrez votre code à 6 chiffres"
-      />
-      <MainButton to="/subscribeoptions" />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
+        <MainFormGroup
+          size="md"
+          controlId="formBasicCode"
+          label="Code de validation"
+          placeholder="Rentrez votre code à 6 chiffres"
+        />
+        <MainButton to="/subscribeoptions" />
+      </div>
     </div>
   )
 }

@@ -13,6 +13,7 @@ import NewEmailPage from "./pages/NewEmailPage"
 import SignUpVerificationPage from "./pages/SignUpVerificationPage"
 import Dashboard from "./pages/DashboardPage"
 import Tasks from "./components/dashboardComponents/tasks/Tasks"
+import NewTask from "./components/dashboardComponents/tasks/NewTask"
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Switch>
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/dashboard/tasks" component={Tasks} />
+        <Route exact path="/dashboard/tasks/newtask" component={NewTask} />
         <Route exact path="/login" component={LogInPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route

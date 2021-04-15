@@ -6,7 +6,12 @@ const MainBackButton = (props) => {
   const { onClick } = props
 
   return (
-    <h1 style={{ fontWeight: "bold", cursor: "pointer" }}>
+    <h1
+      style={{
+        fontWeight: "bold",
+        cursor: "pointer",
+      }}
+    >
       <Badge variant="info" size="lg" onClick={onClick}>
         &lt;
       </Badge>

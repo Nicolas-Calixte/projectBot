@@ -27,7 +27,7 @@ const Tasks = () => {
         <Link
           className="btn btn-primary btn-lg"
           role="button"
-          style={{ width: "167px", marginTop: "30px", marginBottom: "30px" }}
+          style={{ width: "167px", marginTop: "27px", marginBottom: "30px" }}
           to="/dashboard/tasks/newtask"
           active
         >
