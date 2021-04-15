@@ -44,5 +44,4 @@ const NewEmailPage = () => {
   )
 }
 
-console.log(MainButton)
 export default NewEmailPage
