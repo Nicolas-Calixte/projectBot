@@ -1,5 +1,5 @@
-import React, { useEffect } from "react"
-import { Route, Switch, useHistory } from "react-router-dom"
+import React from "react"
+import { Route, Switch } from "react-router-dom"
 
 import LogInPage from "./pages/LogInPage"
 import SignUpPage from "./pages/SignUpPage"
@@ -11,15 +11,15 @@ import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 import VerificationEmailCodePage from "./pages/VerificationEmailCodePage"
 import NewEmailPage from "./pages/NewEmailPage"
 import SignUpVerificationPage from "./pages/SignUpVerificationPage"
+import Dashboard from "./pages/DashboardPage"
+import Tasks from "./components/dashboardComponents/tasks/Tasks"
 
 const App = () => {
-  const history = useHistory()
-
-  useEffect(() => history.push("/login"), [])
-
   return (
     <div>
       <Switch>
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/dashboard/tasks" component={Tasks} />
         <Route exact path="/login" component={LogInPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route
