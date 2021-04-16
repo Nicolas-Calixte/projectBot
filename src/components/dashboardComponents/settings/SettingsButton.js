@@ -10,7 +10,7 @@ const SettingsButton = (props) => {
       <Link
         className="btn btn-link btn-md"
         role="button"
-        style={{ width: "250px" }}
+        style={{ width: "250px", padding: "20px" }}
         to={to}
       >
         {btnName}

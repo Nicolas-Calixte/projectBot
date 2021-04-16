@@ -25,8 +25,18 @@ const Settings = () => {
               btnName="Changer mon identifiant"
             />
           </NavItem>
-          <NavItem></NavItem>
-          <NavItem></NavItem>
+          <NavItem style={{ borderBottom: "2px solid black" }}>
+            <SettingsButton
+              to="/dashboard/settings/resetpassword"
+              btnName="Changer mon mot de passe"
+            />
+          </NavItem>
+          <NavItem style={{ borderBottom: "2px solid black" }}>
+            <SettingsButton
+              to="/dashboard/settings/contactus"
+              btnName="Nous contacter"
+            />
+          </NavItem>
           <NavItem></NavItem>
           <NavItem></NavItem>
         </Nav>

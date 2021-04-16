@@ -17,6 +17,11 @@ import NewTask from "./components/dashboardComponents/tasks/NewTask"
 import Settings from "./components/dashboardComponents/settings/Settings"
 import ResetEmailSettings from "./components/dashboardComponents/settings/settingsPages/ResetEmailSettings"
 import VerificationEmailCodeSettings from "./components/dashboardComponents/settings/settingsPages/VerificationEmailCodeSettings"
+import NewEmailSettings from "./components/dashboardComponents/settings/settingsPages/NewEmailSettings"
+import ResetPasswordSettings from "./components/dashboardComponents/settings/settingsPages/ResetPasswordSettings"
+import VerificationPasswordCodeSettings from "./components/dashboardComponents/settings/settingsPages/VerificationPasswordCodeSettings"
+import NewPasswordSettings from "./components/dashboardComponents/settings/settingsPages/NewPasswordSettings"
+import ContactUs from "./components/dashboardComponents/settings/settingsPages/ContactUs"
 
 const App = () => {
   const history = useHistory()
@@ -79,6 +84,31 @@ const App = () => {
           exact
           path="/dashboard/settings/resetemail/verificationemailcode"
           component={VerificationEmailCodeSettings}
+        />
+        <Route
+          exact
+          path="/dashboard/settings/resetemail/verificationemailcode/newemail"
+          component={NewEmailSettings}
+        />
+        <Route
+          exact
+          path="/dashboard/settings/resetpassword"
+          component={ResetPasswordSettings}
+        />
+        <Route
+          exact
+          path="/dashboard/settings/resetpassword/verificationpasswordcode"
+          component={VerificationPasswordCodeSettings}
+        />
+        <Route
+          exact
+          path="/dashboard/settings/resetpassword/verificationpasswordcode/newpassword"
+          component={NewPasswordSettings}
+        />
+        <Route
+          exact
+          path="/dashboard/settings/contactus"
+          component={ContactUs}
         />
       </Switch>
     </div>
