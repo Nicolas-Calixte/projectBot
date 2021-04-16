@@ -1,6 +1,6 @@
 import React from "react"
 import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
-import { useHistory } from "react-router"
+import { useHistory } from "react-router-dom"
 
 import MainBackButton from "../components/primaryComponents/MainBackButton"
 import MainButton from "../components/primaryComponents/MainButton"

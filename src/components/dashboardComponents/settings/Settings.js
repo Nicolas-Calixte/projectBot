@@ -17,7 +17,15 @@ const Settings = () => {
         <MainBackButton onClick={handleHistory} />
         <MainTitle title="Paramètres" />
       </Row>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "60vh",
+        }}
+      >
         <Nav className="flex-column justify-content-center">
           <NavItem style={{ borderBottom: "2px solid black" }}>
             <SettingsButton
@@ -37,7 +45,12 @@ const Settings = () => {
               btnName="Nous contacter"
             />
           </NavItem>
-          <NavItem></NavItem>
+          <NavItem>
+            <SettingsButton
+              to="/dashboard/settings/logout"
+              btnName="Déconnexion"
+            />
+          </NavItem>
           <NavItem></NavItem>
         </Nav>
       </div>

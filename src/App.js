@@ -22,6 +22,7 @@ import ResetPasswordSettings from "./components/dashboardComponents/settings/set
 import VerificationPasswordCodeSettings from "./components/dashboardComponents/settings/settingsPages/VerificationPasswordCodeSettings"
 import NewPasswordSettings from "./components/dashboardComponents/settings/settingsPages/NewPasswordSettings"
 import ContactUs from "./components/dashboardComponents/settings/settingsPages/ContactUs"
+import LogOut from "./components/dashboardComponents/settings/settingsPages/LogOut"
 
 const App = () => {
   const history = useHistory()
@@ -110,6 +111,7 @@ const App = () => {
           path="/dashboard/settings/contactus"
           component={ContactUs}
         />
+        <Route exact path="/dashboard/settings/logout" component={LogOut} />
       </Switch>
     </div>
   )
