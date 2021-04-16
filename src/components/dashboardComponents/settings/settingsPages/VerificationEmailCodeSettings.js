@@ -2,12 +2,12 @@ import React from "react"
 import { Row } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
-import MainBackButton from "../components/primaryComponents/MainBackButton"
-import MainTitle from "../components/primaryComponents/MainTitle"
-import MainFormGroup from "../components/primaryComponents/MainFormGroup"
-import MainButton from "../components/primaryComponents/MainButton"
+import MainBackButton from "../../../primaryComponents/MainBackButton"
+import MainButton from "../../../primaryComponents/MainButton"
+import MainFormGroup from "../../../primaryComponents/MainFormGroup"
+import MainTitle from "../../../primaryComponents/MainTitle"
 
-const VerificationEmailCodePage = () => {
+const VerificationEmailCodeSettings = () => {
   const history = useHistory()
   const handleHistory = () => history.goBack()
 
@@ -40,10 +40,10 @@ const VerificationEmailCodePage = () => {
         <p>
           Code non reçu ? <a href="#">Renvoyez un code</a>.
         </p>
-        <MainButton to="/login/resetemail/verificationemailcode/newemail" />
+        <MainButton to="/dashboard/settings/resetemail/verificationemailcode/newemail" />
       </div>
     </div>
   )
 }
 
-export default VerificationEmailCodePage
+export default VerificationEmailCodeSettings

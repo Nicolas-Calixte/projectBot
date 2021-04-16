@@ -2,11 +2,11 @@ import React from "react"
 import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
 import { useHistory } from "react-router"
 
-import MainBackButton from "../components/primaryComponents/MainBackButton"
-import MainButton from "../components/primaryComponents/MainButton"
-import MainTitle from "../components/primaryComponents/MainTitle"
+import MainBackButton from "../../../primaryComponents/MainBackButton"
+import MainButton from "../../../primaryComponents/MainButton"
+import MainTitle from "../../../primaryComponents/MainTitle"
 
-const NewEmailPage = () => {
+const NewEmailSettings = () => {
   const history = useHistory()
   const handleHistory = () => history.goBack()
 
@@ -48,10 +48,10 @@ const NewEmailPage = () => {
             />
           </FormGroup>
         </Form>
-        <MainButton to="/login" />
+        <MainButton to="/dashboard/settings" />
       </div>
     </div>
   )
 }
 
-export default NewEmailPage
+export default NewEmailSettings

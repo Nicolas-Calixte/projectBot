@@ -1,5 +1,5 @@
-import React from "react"
-import { Route, Switch } from "react-router-dom"
+import React, { useEffect } from "react"
+import { Route, Switch, useHistory } from "react-router-dom"
 
 import LogInPage from "./pages/LogInPage"
 import SignUpPage from "./pages/SignUpPage"
@@ -15,8 +15,16 @@ import Dashboard from "./pages/DashboardPage"
 import Tasks from "./components/dashboardComponents/tasks/Tasks"
 import NewTask from "./components/dashboardComponents/tasks/NewTask"
 import Settings from "./components/dashboardComponents/settings/Settings"
+import ResetEmailSettings from "./components/dashboardComponents/settings/settingsPages/ResetEmailSettings"
+import VerificationEmailCodeSettings from "./components/dashboardComponents/settings/settingsPages/VerificationEmailCodeSettings"
 
 const App = () => {
+  const history = useHistory()
+
+  useEffect(() => {
+    history.push("/login")
+  }, [])
+
   return (
     <div>
       <Switch>
@@ -62,6 +70,16 @@ const App = () => {
         <Route exact path="/dashboard/tasks" component={Tasks} />
         <Route exact path="/dashboard/tasks/newtask" component={NewTask} />
         <Route exact path="/dashboard/settings" component={Settings} />
+        <Route
+          exact
+          path="/dashboard/settings/resetemail"
+          component={ResetEmailSettings}
+        />
+        <Route
+          exact
+          path="/dashboard/settings/resetemail/verificationemailcode"
+          component={VerificationEmailCodeSettings}
+        />
       </Switch>
     </div>
   )

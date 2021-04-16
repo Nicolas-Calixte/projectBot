@@ -8,7 +8,7 @@ import MainTitle from "../../primaryComponents/MainTitle"
 
 const NewTask = () => {
   const history = useHistory()
-  const handleHistory = history.goBack()
+  const handleHistory = () => history.goBack()
 
   return (
     <div

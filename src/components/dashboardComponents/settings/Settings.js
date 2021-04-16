@@ -7,7 +7,7 @@ import SettingsButton from "./SettingsButton"
 
 const Settings = () => {
   const history = useHistory()
-  const handleHistory = history.goBack()
+  const handleHistory = () => history.goBack()
 
   return (
     <div

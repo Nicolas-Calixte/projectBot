@@ -8,9 +8,9 @@ const SettingsButton = (props) => {
   return (
     <div>
       <Link
-        className="btn btn-link btn-lg"
+        className="btn btn-link btn-md"
         role="button"
-        style={{ width: "140px" }}
+        style={{ width: "250px" }}
         to={to}
       >
         {btnName}
