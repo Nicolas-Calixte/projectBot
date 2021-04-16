@@ -23,6 +23,7 @@ import VerificationPasswordCodeSettings from "./components/dashboardComponents/s
 import NewPasswordSettings from "./components/dashboardComponents/settings/settingsPages/NewPasswordSettings"
 import ContactUs from "./components/dashboardComponents/settings/settingsPages/ContactUs"
 import LogOut from "./components/dashboardComponents/settings/settingsPages/LogOut"
+import Account from "./components/dashboardComponents/settings/settingsPages/Account"
 
 const App = () => {
   const history = useHistory()
@@ -75,6 +76,7 @@ const App = () => {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/dashboard/tasks" component={Tasks} />
         <Route exact path="/dashboard/tasks/newtask" component={NewTask} />
+        <Route exact path="/dashboard/accounts" component={Account} />
         <Route exact path="/dashboard/settings" component={Settings} />
         <Route
           exact

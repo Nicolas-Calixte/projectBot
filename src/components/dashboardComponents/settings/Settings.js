@@ -1,6 +1,7 @@
 import React from "react"
 import { Nav, NavItem, Row } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
+
 import MainBackButton from "../../primaryComponents/MainBackButton"
 import MainTitle from "../../primaryComponents/MainTitle"
 import SettingsButton from "./SettingsButton"
@@ -45,7 +46,7 @@ const Settings = () => {
               btnName="Nous contacter"
             />
           </NavItem>
-          <NavItem>
+          <NavItem style={{ borderBottom: "2px solid black" }}>
             <SettingsButton
               to="/dashboard/settings/logout"
               btnName="Déconnexion"
