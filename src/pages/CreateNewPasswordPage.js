@@ -8,7 +8,7 @@ import MainTitle from "../components/primaryComponents/MainTitle"
 
 const CreateNewPasswordPage = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleHistory = () => history.push("/dashboard/settings")
 
   return (
     <div

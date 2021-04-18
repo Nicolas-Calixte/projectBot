@@ -11,7 +11,7 @@ import TaskInProgress from "./TaskInProgress"
 
 const Tasks = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleHistory = () => history.push("/dashboard")
 
   const [key, setKey] = useState("Tâches en cours")
 

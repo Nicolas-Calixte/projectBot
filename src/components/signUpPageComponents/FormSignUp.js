@@ -1,5 +1,11 @@
 import React from "react"
-import { Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
+import {
+  Form,
+  FormCheck,
+  FormControl,
+  FormGroup,
+  FormLabel,
+} from "react-bootstrap"
 
 const FormSignUp = () => {
   return (
@@ -60,6 +66,13 @@ const FormSignUp = () => {
             />
           </FormGroup>
         </Form.Row>
+        <FormCheck
+          type="checkbox"
+          name="cgu"
+          id="cgu-check"
+          label="J'accepte les conditions générales d'utilisation."
+          style={{ textAlign: "center" }}
+        />
       </Form>
     </div>
   )

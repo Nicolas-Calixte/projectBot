@@ -9,11 +9,11 @@ import MainTitle from "../components/primaryComponents/MainTitle"
 
 const SignUpVerificationPage = () => {
   const history = useHistory()
-  const handleHistory = history.goBack()
+  const handleHistory = () => history.goBack()
 
   return (
     <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "center" }}
+      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
     >
       <div>
         <Row>
@@ -36,7 +36,7 @@ const SignUpVerificationPage = () => {
           label="Code de validation"
           placeholder="Rentrez votre code à 6 chiffres"
         />
-        <MainButton to="/subscribeoptions" />
+        <MainButton to="/login" />
       </div>
     </div>
   )

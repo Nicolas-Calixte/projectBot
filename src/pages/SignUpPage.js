@@ -9,7 +9,7 @@ import FormSignUp from "../components/signUpPageComponents/FormSignUp"
 
 const SignUpPage = () => {
   const history = useHistory()
-  const handleHistory = () => history.push("/login")
+  const handleHistory = () => history.goBack()
 
   return (
     <div
@@ -35,8 +35,10 @@ const SignUpPage = () => {
         }}
       >
         <FormSignUp />
-        <p>Un code de validation va être envoyé à votre adresse email.</p>
         <MainButton to="/signup/signupverification" />
+        <p style={{ marginTop: "25px" }}>
+          Un code de validation va être envoyé à votre adresse email.
+        </p>
       </div>
     </div>
   )

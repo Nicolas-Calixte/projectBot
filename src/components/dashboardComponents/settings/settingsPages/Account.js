@@ -1,13 +1,13 @@
 import React from "react"
 import { Row, Table } from "react-bootstrap"
-import { useHistory } from "react-router"
+import { useHistory } from "react-router-dom"
 
 import MainBackButton from "../../../primaryComponents/MainBackButton"
 import MainTitle from "../../../primaryComponents/MainTitle"
 
 const Account = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleHistory = () => history.push("/dashboard")
 
   return (
     <div

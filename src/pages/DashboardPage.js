@@ -1,7 +1,7 @@
 import React from "react"
 import { Nav, NavItem } from "react-bootstrap"
-import DashboardButton from "../components/dashboardComponents/DashboardButton"
 
+import DashboardButton from "../components/dashboardComponents/DashboardButton"
 import MainTitle from "../components/primaryComponents/MainTitle"
 
 const Dashboard = () => {
@@ -9,7 +9,12 @@ const Dashboard = () => {
     <div
       style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
     >
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div
+        style={{
+          paddingBottom: "7px",
+          borderBottom: "2px solid black",
+        }}
+      >
         <Nav>
           <NavItem style={{ marginRight: "5px" }}>
             <DashboardButton to="/dashboard/tasks" btnName="Tâches" />

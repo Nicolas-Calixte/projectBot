@@ -46,28 +46,30 @@ const NewTask = () => {
 
       <div style={{ marginTop: "15px" }}>
         <Form>
-          {["checkbox"].map(() => (
-            <div
-              key={"default"}
-              className="mb-5"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-around",
-              }}
-            >
-              <FormCheck
-                id={"create-account"}
-                label={"Créer un nouveau compte"}
-                style={{ marginRight: "13px" }}
-              />
+          <div
+            key={"default"}
+            className="mb-5"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+            }}
+          >
+            <FormCheck
+              name="execute-mode"
+              type="radio"
+              id="create-account"
+              label="Créer un nouveau compte"
+              style={{ marginRight: "13px" }}
+            />
 
-              <FormCheck
-                id={"lauch-as-invited"}
-                label={"Executer tant qu'invité"}
-              />
-            </div>
-          ))}
+            <FormCheck
+              name="execute-mode"
+              type="radio"
+              id="lauch-as-invited"
+              label="Executer tant qu'invité"
+            />
+          </div>
 
           <div>
             <FormGroup>
@@ -115,28 +117,30 @@ const NewTask = () => {
               />
             </FormGroup>
           </div>
-          {["checkbox"].map(() => (
-            <div
-              key={"default"}
-              className="mb-5"
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <FormCheck
-                id={"launch-now"}
-                label={"Lancer la tâche maintenant"}
-                style={{ marginRight: "13px" }}
-              />
+          <div
+            key={"default"}
+            className="mb-5"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <FormCheck
+              name="execute-time"
+              type="radio"
+              id="launch-now"
+              label="Lancer la tâche maintenant"
+              style={{ marginRight: "13px" }}
+            />
 
-              <FormCheck
-                label={"Lancer la tâche plus tard"}
-                id={"launch-later"}
-              />
-            </div>
-          ))}
+            <FormCheck
+              name="execute-time"
+              type="radio"
+              label="Lancer la tâche plus tard"
+              id="launch-later"
+            />
+          </div>
         </Form>
       </div>
       <MainButton to="/dashboard/tasks" />
