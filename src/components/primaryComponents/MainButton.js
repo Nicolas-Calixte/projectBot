@@ -13,7 +13,6 @@ const MainButton = (props) => {
         style={{ width: "155px" }}
         to={to}
         onClick={onClick}
-        active
       >
         CONFIRMER
       </Link>
