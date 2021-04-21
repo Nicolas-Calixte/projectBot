@@ -7,7 +7,6 @@ import ResetPasswordPage from "./pages/ResetPasswordPage"
 import VerificationPasswordCodePage from "./pages/VerificationPasswordCodePage"
 import CreateNewPasswordPage from "./pages/CreateNewPasswordPage"
 import ResetEmailPage from "./pages/ResetEmailPage"
-import SubscribeOptionsPage from "./pages/SubscribeOptionsPage"
 import VerificationEmailCodePage from "./pages/VerificationEmailCodePage"
 import NewEmailPage from "./pages/NewEmailPage"
 import SignUpVerificationPage from "./pages/SignUpVerificationPage"
@@ -29,91 +28,86 @@ const App = () => {
   const history = useHistory()
 
   useEffect(() => {
-    history.push("/login")
+    history.push("/log-in")
   }, [])
 
   return (
     <div>
       <Switch>
-        <Route exact path="/login" component={LogInPage} />
-        <Route exact path="/signup" component={SignUpPage} />
+        <Route exact path="/log-in" component={LogInPage} />
+        <Route exact path="/sign-up" component={SignUpPage} />
         <Route
           exact
-          path="/signup/signupverification"
+          path="/sign-up/signup-verification"
           component={SignUpVerificationPage}
         />
         <Route
           exact
-          path="/login/resetpassword"
+          path="/log-in/reset-password"
           component={ResetPasswordPage}
         />
         <Route
           exact
-          path="/login/resetpassword/verificationpasswordcode"
+          path="/log-in/reset-password/verification-password-code"
           component={VerificationPasswordCodePage}
         />
         <Route
           exact
-          path="/login/resetpassword/verificationpasswordcode/newpassword"
+          path="/log-in/reset-password/verification-password-code/new-password"
           component={CreateNewPasswordPage}
         />
-        <Route exact path="/login/resetemail" component={ResetEmailPage} />
+        <Route exact path="/log-in/reset-email" component={ResetEmailPage} />
         <Route
           exact
-          path="/login/resetemail/verificationemailcode"
+          path="/log-in/reset-email/verification-email-code"
           component={VerificationEmailCodePage}
         />
         <Route
           exact
-          path="/login/resetemail/verificationemailcode/newemail"
+          path="/log-in/reset-email/verification-email-code/new-email"
           component={NewEmailPage}
-        />
-        <Route
-          exact
-          path="/subscribeoptions"
-          component={SubscribeOptionsPage}
         />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/dashboard/tasks" component={Tasks} />
-        <Route exact path="/dashboard/tasks/newtask" component={NewTask} />
+        <Route exact path="/dashboard/tasks/new-task" component={NewTask} />
         <Route exact path="/dashboard/accounts" component={Account} />
         <Route exact path="/dashboard/settings" component={Settings} />
         <Route
           exact
-          path="/dashboard/settings/resetemail"
+          path="/dashboard/settings/reset-email"
           component={ResetEmailSettings}
         />
         <Route
           exact
-          path="/dashboard/settings/resetemail/verificationemailcode"
+          path="/dashboard/settings/reset-email/verification-email-code"
           component={VerificationEmailCodeSettings}
         />
         <Route
           exact
-          path="/dashboard/settings/resetemail/verificationemailcode/newemail"
+          path="/dashboard/settings/reset-email/verification-email-code/new-email"
           component={NewEmailSettings}
         />
         <Route
           exact
-          path="/dashboard/settings/resetpassword"
+          path="/dashboard/settings/reset-password"
           component={ResetPasswordSettings}
         />
         <Route
           exact
-          path="/dashboard/settings/resetpassword/verificationpasswordcode"
+          path="/dashboard/settings/reset-password/verification-password-code"
           component={VerificationPasswordCodeSettings}
         />
         <Route
           exact
-          path="/dashboard/settings/resetpassword/verificationpasswordcode/newpassword"
+          path="/dashboard/settings/reset-password/verification-password-code/new-password"
           component={NewPasswordSettings}
         />
         <Route
           exact
-          path="/dashboard/settings/contactus"
+          path="/dashboard/settings/contact-us"
           component={ContactUs}
         />
-        <Route exact path="/dashboard/settings/logout" component={LogOut} />
+        <Route exact path="/dashboard/settings/log-out" component={LogOut} />
       </Switch>
     </div>
   )

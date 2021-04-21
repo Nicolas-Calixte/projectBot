@@ -6,15 +6,18 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
     "eslint-plugin-import": "^2.22.1",
+    "knex": "^0.95.4",
     "mdbreact": "^5.0.2",
     "mime-types": "^2.1.29",
     "node-sass": "^5.0.0",
+    "objection": "^2.2.15",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
+    "redis": "^3.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -42,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "bootstrap": "^4.6.0",
     "eslint": "^7.23.0",
     "eslint-plugin-react": "^7.23.1",
     "express": "^4.17.1",

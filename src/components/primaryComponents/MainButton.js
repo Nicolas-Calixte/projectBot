@@ -1,22 +1,14 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
+import { Button } from "react-bootstrap"
 
 const MainButton = (props) => {
-  const { to, onClick } = props
+  const { onClick } = props
 
   return (
-    <div style={{ marginTop: "20px" }}>
-      <Link
-        className="btn btn-info btn-lg"
-        role="button"
-        style={{ width: "155px" }}
-        to={to}
-        onClick={onClick}
-      >
-        CONFIRMER
-      </Link>
-    </div>
+    <Button variant="primary" onClick={onClick}>
+      CONFIRMER
+    </Button>
   )
 }
 
