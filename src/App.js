@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { Route, Switch, useHistory } from "react-router-dom"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 import LogInPage from "./pages/LogInPage"
 import SignUpPage from "./pages/SignUpPage"

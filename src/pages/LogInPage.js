@@ -1,17 +1,16 @@
 import React, { useCallback } from "react"
 import {
-  Button,
   Form,
   FormControl,
   FormGroup,
   FormLabel,
   Row,
   Col,
+  Button,
 } from "react-bootstrap"
 
 import Page, { PageContent, PageHeader } from "../components/Page"
-import { useHistory } from "react-router"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 const LogInPage = () => {
   const history = useHistory()
@@ -22,11 +21,11 @@ const LogInPage = () => {
   })
 
   return (
-    <Page>
-      <PageHeader>Sign In</PageHeader>
-      <PageContent className="align-items-center gy-3">
+    <Page style={{ display: "flex", alignItems: "center" }}>
+      <PageHeader noBack>Sign In</PageHeader>
+      <PageContent>
         <Form>
-          <Row className="mb-2">
+          <Row className="mt-2 mb-2">
             <Col>
               <FormGroup controlId="formBasicEmail">
                 <FormLabel>Email</FormLabel>
@@ -38,6 +37,7 @@ const LogInPage = () => {
               </FormGroup>
             </Col>
           </Row>
+
           <Row className="mb-2">
             <Col>
               <FormGroup controlId="formBasicPassword">
@@ -51,24 +51,27 @@ const LogInPage = () => {
             </Col>
           </Row>
         </Form>
-        <Row className="mb-2">
+
+        <Row className="text-center mb-4">
           <Col>
-            Don't have an account? <Link to="/signup">Sign up</Link>!
+            Don't have an account? <Link to="/sign-up">Sign up</Link>!
           </Col>
         </Row>
+
         <Row className="mb-2">
           <Col>
-            <Button size="lg" block onClick={handleSubmit}>
+            <Button size="lg" variant="primary" onClick={handleSubmit} block>
               Sign In
             </Button>
           </Col>
         </Row>
-        <Row className="mb-2">
+
+        <Row className="d-flex space-around mt-3 mb-2">
           <Col>
-            <Link to="/login/resetpassword">Forgot password</Link>
+            <Link to="/log-in/reset-password">Forgot password</Link>
           </Col>
           <Col>
-            <Link to="/login/resetemail">Forgot username</Link>
+            <Link to="/log-in/reset-email">Forgot username</Link>
           </Col>
         </Row>
       </PageContent>
