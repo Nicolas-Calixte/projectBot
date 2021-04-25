@@ -39,7 +39,7 @@ const App = () => {
         <Route exact path="/sign-up" component={SignUpPage} />
         <Route
           exact
-          path="/sign-up/signup-verification"
+          path="/sign-up/sign-up-verification"
           component={SignUpVerificationPage}
         />
         <Route

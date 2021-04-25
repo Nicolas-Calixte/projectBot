@@ -11,7 +11,12 @@ const BackButton = (props) => {
   }, [history])
 
   return (
-    <span onClick={handleClick} className="h2 position-absolute" {...props}>
+    <span
+      onClick={handleClick}
+      className="h2 position-absolute"
+      style={{ cursor: "pointer" }}
+      {...props}
+    >
       ⬅︎
     </span>
   )

@@ -1,48 +1,51 @@
-import React from "react"
-import { Row } from "react-bootstrap"
+import React, { useCallback } from "react"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  Row,
+} from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
-import MainBackButton from "../components/primaryComponents/MainBackButton"
-import MainTitle from "../components/primaryComponents/MainTitle"
-import MainFormGroup from "../components/primaryComponents/MainFormGroup"
-import MainButton from "../components/primaryComponents/MainButton"
+import Page, { PageContent, PageHeader } from "../components/Page"
 
 const VerificationEmailCodePage = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push("/log-in/reset-email/verification-email-code/new-email")
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="Réinitialiser votre identifiant" />
+    <Page>
+      <PageHeader>Réinitialiser mon identifiant</PageHeader>
+      <PageContent className="d-flex align-items-center justify-content-center">
+        <Row className="mt-3">
+          <Col>
+            <Form>
+              <FormGroup>
+                <FormLabel>Entrez le code de vérification reçu</FormLabel>
+                <FormControl
+                  size="md"
+                  type="code"
+                  placeholder="Rentrez votre code à 6 chiffres"
+                />
+              </FormGroup>
+              <Button size="lg" variant="primary" onClick={handleSubmit} block>
+                Confirmer
+              </Button>
+            </Form>
+            <p className="mt-3">
+              Code non reçu ? <a href="#">Renvoyez un code</a>.
+            </p>
+          </Col>
         </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <MainFormGroup
-          controlId="formBasicNumber"
-          size="md"
-          label="Entrez le code de verification reçu"
-          type="code"
-          placeholder="Rentrez votre code à 6 chiffres"
-        />
-        <p>
-          Code non reçu ? <a href="#">Renvoyez un code</a>.
-        </p>
-        <MainButton to="/login/resetemail/verificationemailcode/newemail" />
-      </div>
-    </div>
+      </PageContent>
+    </Page>
   )
 }
 

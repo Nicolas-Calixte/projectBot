@@ -1,53 +1,57 @@
-import React from "react"
-import { Row } from "react-bootstrap"
+import React, { useCallback } from "react"
 import { useHistory } from "react-router-dom"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  FormText,
+  Row,
+} from "react-bootstrap"
 
-import MainBackButton from "../components/primaryComponents/MainBackButton"
-import MainButton from "../components/primaryComponents/MainButton"
-import MainFormGroup from "../components/primaryComponents/MainFormGroup"
-import MainTitle from "../components/primaryComponents/MainTitle"
+import Page, { PageContent, PageHeader } from "../components/Page"
 
 const ResetEmailPage = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
 
+    history.push("/log-in/reset-email/verification-email-code")
+  })
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle size="lg" title="Réinitialisez votre identifiant" />
+    <Page>
+      <PageHeader>Réinitialiser mon identifiant</PageHeader>
+      <PageContent className="d-flex align-items-center justify-content-center">
+        <Row className="mt-3">
+          <Col>
+            <Form>
+              <FormGroup>
+                <FormLabel>Entrez votre numéro de téléphone</FormLabel>
+                <FormControl
+                  size="md"
+                  type="phoneNumber"
+                  placeholder="Entrez le n° de téléphone associé à votre compte "
+                />
+                <FormText>Un code de validation va vous être envoyé.</FormText>
+              </FormGroup>
+              <Button size="lg" variant="primary" onClick={handleSubmit} block>
+                Confirmer
+              </Button>
+            </Form>
+
+            <p className="mt-3">
+              Vous n&apos;avez pas associé de n° de téléphone à votre compte ?{" "}
+              <a href="mailto:nicolascalixte.pro@gmail.com">
+                Contactez le support
+              </a>
+              .{" "}
+            </p>
+          </Col>
         </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <MainFormGroup
-          controlId="basicPhoneNumberForm"
-          label="Entrez le n° de téléphone associé à votre compte"
-          size="md"
-          type="phoneNumber"
-          placeholder="Entrez votre n° de téléphone"
-        />
-        <p style={{ marginTop: "15px", marginBottom: "0px" }}>
-          Un code de validation va vous être envoyé.
-        </p>
-        <p>
-          Vous n&apos;avez pas associé de n° de téléphone à votre compte ?{" "}
-          <a href="mailto:nicolascalixte.pro@gmail.com">Contactez le support</a>
-          .{" "}
-        </p>
-        <MainButton to="/login/resetemail/verificationemailcode" />
-      </div>
-    </div>
+      </PageContent>
+    </Page>
   )
 }
 

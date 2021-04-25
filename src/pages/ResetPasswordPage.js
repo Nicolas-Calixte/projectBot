@@ -1,45 +1,48 @@
-import React from "react"
-import { Row } from "react-bootstrap"
-import { useHistory } from "react-router"
+import React, { useCallback } from "react"
+import { useHistory } from "react-router-dom"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  Row,
+} from "react-bootstrap"
 
-import MainBackButton from "../components/primaryComponents/MainBackButton"
-import MainButton from "../components/primaryComponents/MainButton"
-import MainFormGroup from "../components/primaryComponents/MainFormGroup"
-import MainTitle from "../components/primaryComponents/MainTitle"
+import Page, { PageContent, PageHeader } from "../components/Page"
 
 const ResetPasswordPage = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push("/log-in/reset-password/verification-password-code")
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle size="lg" title="Réinitialisez votre mot de passe" />
+    <Page>
+      <PageHeader>Reset password</PageHeader>
+      <PageContent className="d-flex align-items-center justify-content-center">
+        <Row className="mt-3">
+          <Col>
+            <Form>
+              <FormGroup controlId="usernameFormGroup">
+                <FormLabel>Username</FormLabel>
+                <FormControl
+                  size="md"
+                  type="email"
+                  placeholder="Enter your email adress or phone number"
+                />
+              </FormGroup>
+            </Form>
+            <Button size="lg" variant="primary" onClick={handleSubmit} block>
+              Confirm
+            </Button>
+          </Col>
         </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <MainFormGroup
-          controlId="email/phone number"
-          label="Identifiant"
-          size="md"
-          type="email"
-          placeholder="Entrez votre email ou n° de téléphone"
-        />
-        <MainButton to="/login/resetpassword/verificationpasswordcode" />
-      </div>
-    </div>
+      </PageContent>
+    </Page>
   )
 }
 

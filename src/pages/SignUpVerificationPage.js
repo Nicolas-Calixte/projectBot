@@ -1,44 +1,40 @@
-import React from "react"
-import { Row } from "react-bootstrap"
-import { useHistory } from "react-router"
+import React, { useCallback } from "react"
+import { Button, Col, Row } from "react-bootstrap"
+import { useHistory } from "react-router-dom"
 
-import MainBackButton from "../components/primaryComponents/MainBackButton"
-import MainButton from "../components/primaryComponents/MainButton"
+import Page, { PageContent, PageHeader } from "../components/Page"
 import MainFormGroup from "../components/primaryComponents/MainFormGroup"
-import MainTitle from "../components/primaryComponents/MainTitle"
 
 const SignUpVerificationPage = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push("/log-in")
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="INSCRIPTION" />
-        </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
+    <Page>
+      <PageHeader>Sign Up</PageHeader>
+      <PageContent
+        style={{ minHeight: "60vh" }}
+        className="d-flex align-item-center justify-content-center"
       >
-        <MainFormGroup
-          size="md"
-          controlId="formBasicCode"
-          label="Code de validation"
-          placeholder="Rentrez votre code à 6 chiffres"
-        />
-        <MainButton to="/login" />
-      </div>
-    </div>
+        <Row className="mt-3">
+          <Col>
+            <MainFormGroup
+              size="md"
+              controlId="formBasicCode"
+              label="Validation code"
+              placeholder="Enter your 6 digits code"
+            />
+            <Button size="lg" variant="primary" onClick={handleSubmit} block>
+              Confirm
+            </Button>
+          </Col>
+        </Row>
+      </PageContent>
+    </Page>
   )
 }
 

@@ -18,7 +18,7 @@ const SignUpPage = () => {
   const handleSubmit = useCallback(() => {
     // if (creds === ok)
 
-    history.push("/dashboard")
+    history.push("/sign-up/sign-up-verification")
   })
 
   return (
@@ -31,22 +31,22 @@ const SignUpPage = () => {
         <div>
           <Form>
             <Col>
-              <Row className="d-flex space-between">
+              <Row className="mt-2">
                 <FormGroup controlId="formGridName">
-                  <FormLabel>Nom</FormLabel>
+                  <FormLabel>Lastname</FormLabel>
                   <FormControl
                     size="lg"
                     type="name"
-                    placeholder="Entrez votre nom"
+                    placeholder="Enter your lastname"
                   />
                 </FormGroup>
 
                 <FormGroup controlId="formGridFirstname">
-                  <FormLabel>Prénom</FormLabel>
+                  <FormLabel>Firstname</FormLabel>
                   <FormControl
                     size="lg"
                     type="firstname"
-                    placeholder="Entrez votre prénom"
+                    placeholder="Enter you firstname"
                   />
                 </FormGroup>
               </Row>
@@ -57,36 +57,36 @@ const SignUpPage = () => {
                   <FormControl
                     size="lg"
                     type="email"
-                    placeholder="Entrez votre adresse email"
+                    placeholder="Enter your email adress"
                   />
                 </FormGroup>
 
                 <FormGroup controlId="FormGridPhoneNumber">
-                  <FormLabel>Numéro de téléphone(optionnel)</FormLabel>
+                  <FormLabel>Phone number(optional)</FormLabel>
                   <FormControl
                     size="lg"
                     type="phone number"
-                    placeholder="Entrez votre numéro de téléphone"
+                    placeholder="Enter your phone number"
                   />
                 </FormGroup>
               </Row>
 
               <Row>
                 <FormGroup controlId="FormGridPassword">
-                  <FormLabel>Mot de passe</FormLabel>
+                  <FormLabel>Password</FormLabel>
                   <FormControl
                     size="lg"
                     type="password"
-                    placeholder="Créez votre mot de passe"
+                    placeholder="Create your password"
                   />
                 </FormGroup>
 
                 <FormGroup controlId="FormGridPassword">
-                  <FormLabel>Confirmez le mot de passe</FormLabel>
+                  <FormLabel>Confirm password</FormLabel>
                   <FormControl
                     size="lg"
                     type="password"
-                    placeholder="Retapez votre mot de passe"
+                    placeholder="Confirm your password"
                   />
                 </FormGroup>
               </Row>
@@ -106,7 +106,7 @@ const SignUpPage = () => {
             </Button>
           </Row>
           <p className="text-center mt-3">
-            Un code de validation va être envoyé à votre adresse email.
+            An validation code will be sent to your email adress.
           </p>
         </div>
       </PageContent>
