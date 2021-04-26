@@ -1,44 +1,53 @@
-import React from "react"
-import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
-import { useHistory } from "react-router"
-import MainBackButton from "../../../primaryComponents/MainBackButton"
-import MainButton from "../../../primaryComponents/MainButton"
-import MainTitle from "../../../primaryComponents/MainTitle"
+import React, { useCallback } from "react"
+import { useHistory } from "react-router-dom"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+} from "react-bootstrap"
+
+import Page, { PageContent, PageHeader } from "../../../Page"
 
 const ContactUs = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push("/dashboard/settings")
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="Contactez nous" />
-        </Row>
-      </div>
-      <Form>
-        <FormGroup controlId="formMessageObject">
-          <FormLabel>Objet :</FormLabel>
-          <FormControl
-            style={{ width: "450px" }}
-            type="text"
-            placeholder="Rentrez l'objet de votre message"
-          />
-        </FormGroup>
-        <FormGroup controlId="formMessage">
-          <FormLabel>Message :</FormLabel>
-          <FormControl
-            as="textarea"
-            rows={20}
-            placeholder="Saissisez votre message"
-          />
-        </FormGroup>
-      </Form>
-      <MainButton to="/dashboard/settings" />
-    </div>
+    <Page>
+      <PageHeader>Nous contacter</PageHeader>
+      <PageContent>
+        <Col className="d-flex align-items-center justify-content-center mt-2">
+          <Form>
+            <FormGroup controlId="formMessageObject">
+              <FormLabel>Objet :</FormLabel>
+              <FormControl
+                style={{ width: "450px" }}
+                type="text"
+                placeholder="Rentrez l'objet de votre message"
+              />
+            </FormGroup>
+            <FormGroup controlId="formMessage">
+              <FormLabel>Message :</FormLabel>
+              <FormControl
+                as="textarea"
+                rows={20}
+                placeholder="Saissisez votre message"
+              />
+            </FormGroup>
+            <Button size="lg" variant="primary" onClick={handleSubmit} block>
+              Envoyer
+            </Button>
+          </Form>
+        </Col>
+      </PageContent>
+    </Page>
   )
 }
 

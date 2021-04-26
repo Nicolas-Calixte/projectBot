@@ -1,4 +1,5 @@
 import React, { useCallback } from "react"
+import { Link, useHistory } from "react-router-dom"
 import {
   Form,
   FormControl,
@@ -10,7 +11,6 @@ import {
 } from "react-bootstrap"
 
 import Page, { PageContent, PageHeader } from "../components/Page"
-import { Link, useHistory } from "react-router-dom"
 
 const LogInPage = () => {
   const history = useHistory()

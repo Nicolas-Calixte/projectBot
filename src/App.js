@@ -23,7 +23,7 @@ import VerificationPasswordCodeSettings from "./components/dashboardComponents/s
 import NewPasswordSettings from "./components/dashboardComponents/settings/settingsPages/NewPasswordSettings"
 import ContactUs from "./components/dashboardComponents/settings/settingsPages/ContactUs"
 import LogOut from "./components/dashboardComponents/settings/settingsPages/LogOut"
-import Account from "./components/dashboardComponents/settings/settingsPages/Account"
+import Account from "./components/dashboardComponents/Account"
 
 const App = () => {
   const history = useHistory()

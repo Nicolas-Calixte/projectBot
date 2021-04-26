@@ -2,8 +2,8 @@ import React from "react"
 import { Row, Table } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
-import MainBackButton from "../../../primaryComponents/MainBackButton"
-import MainTitle from "../../../primaryComponents/MainTitle"
+import MainBackButton from "../primaryComponents/MainBackButton"
+import MainTitle from "../primaryComponents/MainTitle"
 
 const Account = () => {
   const history = useHistory()
