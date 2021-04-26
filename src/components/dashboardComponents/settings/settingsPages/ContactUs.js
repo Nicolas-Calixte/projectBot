@@ -28,7 +28,7 @@ const ContactUs = () => {
             <FormGroup controlId="formMessageObject">
               <FormLabel>Objet :</FormLabel>
               <FormControl
-                style={{ width: "450px" }}
+                size="lg"
                 type="text"
                 placeholder="Rentrez l'objet de votre message"
               />
@@ -36,6 +36,7 @@ const ContactUs = () => {
             <FormGroup controlId="formMessage">
               <FormLabel>Message :</FormLabel>
               <FormControl
+                size="lg"
                 as="textarea"
                 rows={20}
                 placeholder="Saissisez votre message"

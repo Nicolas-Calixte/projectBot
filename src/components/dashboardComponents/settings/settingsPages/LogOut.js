@@ -1,54 +1,54 @@
-import React from "react"
-import { Row } from "react-bootstrap"
-import { Link, useHistory } from "react-router-dom"
+import React, { useCallback } from "react"
+import { Button, Col, Row } from "react-bootstrap"
+import { useHistory } from "react-router-dom"
 
-import MainBackButton from "../../../primaryComponents/MainBackButton"
-import MainTitle from "../../../primaryComponents/MainTitle"
+import Page, { PageContent, PageHeader } from "../../../Page"
 
 const LogOut = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleLogOut = useCallback(() => {
+    // if (creds === ok)
+
+    history.push("/log-in")
+  })
+
+  const handleReturn = () => history.goBack()
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="Déconnexion" />
-        </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <p>Souhaitez-vous vous déconnecter de l&apos;application ?</p>
-        <Row>
-          <Link
-            className="btn btn-primary btn-md"
-            role="button"
-            style={{ width: "157px", padding: "20px", marginRight: "20px" }}
-            to="/dashboard/settings"
-          >
-            Annuler
-          </Link>
-          <Link
-            className="btn btn-danger btn-md"
-            role="button"
-            style={{ width: "157px", padding: "20px" }}
-            to="/login"
-          >
-            Me déconnecter
-          </Link>
-        </Row>
-      </div>
-    </div>
+    <Page>
+      <PageHeader>Déconnexion</PageHeader>
+      <PageContent>
+        <Col
+          style={{ minHeight: "60vh" }}
+          className="d-flex align-items-center justify-content-center"
+        >
+          <div>
+            <p>Souhaitez-vous vous déconnecter de l&apos;application ?</p>
+            <Row className="d-flex align-items-center justify-content-center space-between">
+              <Button
+                size="md"
+                variant="primary"
+                onClick={handleReturn}
+                className="w-40 p-3"
+                block
+              >
+                Annuler
+              </Button>
+
+              <Button
+                size="md"
+                variant="danger"
+                onClick={handleLogOut}
+                className="w-40 p-3"
+                block
+              >
+                Me déconnecter
+              </Button>
+            </Row>
+          </div>
+        </Col>
+      </PageContent>
+    </Page>
   )
 }
 
