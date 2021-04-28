@@ -1,56 +1,68 @@
-import React from "react"
-import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
+import React, { useCallback } from "react"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  Row,
+} from "react-bootstrap"
 import { useHistory } from "react-router"
 
-import MainBackButton from "../../../primaryComponents/MainBackButton"
-import MainButton from "../../../primaryComponents/MainButton"
-import MainTitle from "../../../primaryComponents/MainTitle"
+import Page, { PageContent, PageHeader } from "../../../Page"
 
 const NewEmailSettings = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push("/dashboard/settings")
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="Réinitialisez votre identifiant" />
-        </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <Form>
-          <FormGroup controlId="formBasicEmail">
-            <FormLabel>Rentrez votre nouvel identifiant</FormLabel>
-            <FormControl
-              size="lg"
-              type="email"
-              placeholder="Entrez votre nouvel adresse email"
-            />
-          </FormGroup>
+    <Page>
+      <PageHeader>Réinitialiser mon identifiant</PageHeader>
+      <PageContent className="d-flex align-items-center justify-content-center">
+        <Row className="mt-3">
+          <Col>
+            <div
+              style={{
+                minHeight: "60vh",
+              }}
+            >
+              <Form>
+                <FormGroup controlId="formBasicEmail">
+                  <FormLabel>Rentrez votre nouvel identifiant</FormLabel>
+                  <FormControl
+                    size="lg"
+                    type="email"
+                    placeholder="Entrez votre nouvel adresse email"
+                  />
+                </FormGroup>
 
-          <FormGroup controlId="formBasicEmail">
-            <FormLabel>Confirmez votre nouvel identifiant</FormLabel>
-            <FormControl
-              size="lg"
-              type="email"
-              placeholder="Confirmez votre adresse email"
-            />
-          </FormGroup>
-        </Form>
-        <MainButton to="/dashboard/settings" />
-      </div>
-    </div>
+                <FormGroup controlId="formBasicEmail">
+                  <FormLabel>Confirmez votre nouvel identifiant</FormLabel>
+                  <FormControl
+                    size="lg"
+                    type="email"
+                    placeholder="Confirmez votre adresse email"
+                  />
+                </FormGroup>
+                <Button
+                  size="lg"
+                  variant="primary"
+                  onClick={handleSubmit}
+                  block
+                >
+                  Confirmer
+                </Button>
+              </Form>
+            </div>
+          </Col>
+        </Row>
+      </PageContent>
+    </Page>
   )
 }
 

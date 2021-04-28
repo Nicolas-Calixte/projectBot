@@ -1,56 +1,68 @@
-import React from "react"
-import { Form, FormControl, FormGroup, FormLabel, Row } from "react-bootstrap"
+import React, { useCallback } from "react"
 import { useHistory } from "react-router-dom"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  Row,
+} from "react-bootstrap"
 
-import MainBackButton from "../../../primaryComponents/MainBackButton"
-import MainButton from "../../../primaryComponents/MainButton"
-import MainTitle from "../../../primaryComponents/MainTitle"
+import Page, { PageContent, PageHeader } from "../../../Page"
 
 const NewPasswordSettings = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push("/dashboard/settings")
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="Réinitialisez votre mot de passe" />
-        </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <Form>
-          <FormGroup controlId="formBasicPassword">
-            <FormLabel>Nouveau mot de passe</FormLabel>
-            <FormControl
-              size="lg"
-              type="password"
-              placeholder="Rentrez votre nouveau mot de passe"
-            />
-          </FormGroup>
+    <Page>
+      <PageHeader>Réinitialiser mon mot de passe</PageHeader>
+      <PageContent className="d-flex align-items-center justify-content-center">
+        <Row className="mt-3">
+          <Col>
+            <div
+              style={{
+                minHeight: "60vh",
+              }}
+            >
+              <Form>
+                <FormGroup controlId="formBasicPassword">
+                  <FormLabel>Nouveau mot de passe</FormLabel>
+                  <FormControl
+                    size="lg"
+                    type="password"
+                    placeholder="Rentrez votre nouveau mot de passe"
+                  />
+                </FormGroup>
 
-          <FormGroup controlId="formBasicPassword">
-            <FormLabel>Confirmez le mot de passe</FormLabel>
-            <FormControl
-              size="lg"
-              type="password"
-              placeholder="Retapez votre mot de passe"
-            />
-          </FormGroup>
-        </Form>
-        <MainButton to="/dashboard/settings" />
-      </div>
-    </div>
+                <FormGroup controlId="formBasicConfirmPassword">
+                  <FormLabel>Confirmez le mot de passe</FormLabel>
+                  <FormControl
+                    size="lg"
+                    type="password"
+                    placeholder="Retapez votre mot de passe"
+                  />
+                </FormGroup>
+                <Button
+                  size="lg"
+                  variant="primary"
+                  onClick={handleSubmit}
+                  block
+                >
+                  Confirmer
+                </Button>
+              </Form>
+            </div>
+          </Col>
+        </Row>
+      </PageContent>
+    </Page>
   )
 }
 

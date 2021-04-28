@@ -1,9 +1,16 @@
 import React, { useCallback } from "react"
-import { Button, Col, Row } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  Row,
+} from "react-bootstrap"
 
 import Page, { PageContent, PageHeader } from "../components/Page"
-import MainFormGroup from "../components/primaryComponents/MainFormGroup"
 
 const SignUpVerificationPage = () => {
   const history = useHistory()
@@ -22,15 +29,19 @@ const SignUpVerificationPage = () => {
       >
         <Row className="mt-3">
           <Col>
-            <MainFormGroup
-              size="md"
-              controlId="formBasicCode"
-              label="Validation code"
-              placeholder="Enter your 6 digits code"
-            />
-            <Button size="lg" variant="primary" onClick={handleSubmit} block>
-              Confirm
-            </Button>
+            <Form>
+              <FormGroup controlId="formBasicCode">
+                <FormLabel>Validation code</FormLabel>
+                <FormControl
+                  size="md"
+                  type="number"
+                  placeholder="Enter your 6 digits code"
+                />
+              </FormGroup>
+              <Button size="lg" variant="primary" onClick={handleSubmit} block>
+                Confirm
+              </Button>
+            </Form>
           </Col>
         </Row>
       </PageContent>

@@ -38,8 +38,8 @@ const Settings = () => {
               <Button
                 size="md"
                 variant="link"
-                onClick={handleResetEmail}
                 className="w-100 p-3"
+                onClick={handleResetEmail}
               >
                 Changer mon identifiant
               </Button>
@@ -48,8 +48,8 @@ const Settings = () => {
               <Button
                 size="md"
                 variant="link"
-                onClick={handleResetPassword}
                 className="w-100 p-3"
+                onClick={handleResetPassword}
               >
                 Changer mon mot de passe
               </Button>
@@ -58,8 +58,8 @@ const Settings = () => {
               <Button
                 size="md"
                 variant="link"
-                onClick={handleContactUs}
                 className="w-100 p-3"
+                onClick={handleContactUs}
               >
                 Nous contacter
               </Button>
@@ -68,8 +68,8 @@ const Settings = () => {
               <Button
                 size="md"
                 variant="link"
-                onClick={handleLogOut}
                 className="w-100 p-3"
+                onClick={handleLogOut}
               >
                 Déconnexion
               </Button>

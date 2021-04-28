@@ -1,48 +1,65 @@
-import React from "react"
-import { Row } from "react-bootstrap"
-import { useHistory } from "react-router"
+import React, { useCallback } from "react"
+import { useHistory } from "react-router-dom"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormGroup,
+  FormLabel,
+  FormText,
+  Row,
+} from "react-bootstrap"
 
-import MainBackButton from "../../../primaryComponents/MainBackButton"
-import MainButton from "../../../primaryComponents/MainButton"
-import MainFormGroup from "../../../primaryComponents/MainFormGroup"
-import MainTitle from "../../../primaryComponents/MainTitle"
+import Page, { PageContent, PageHeader } from "../../../Page"
 
 const VerificationPasswordCodeSettings = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push(
+      "/dashboard/settings/reset-password/verification-password-code/new-password"
+    )
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="Réinitialisez votre mot de passe" />
+    <Page>
+      <PageHeader>Réinitialiser mon mot de passe</PageHeader>
+      <PageContent className="d-flex align-items-center justify-content-center">
+        <Row className="mt-3">
+          <Col>
+            <div
+              style={{
+                minHeight: "60vh",
+              }}
+            >
+              <Form>
+                <FormGroup controlId="basicNumberForm">
+                  <FormLabel>Entrez le code de validation</FormLabel>
+                  <FormControl
+                    size="md"
+                    type="number"
+                    placeholder="Entrez le code à 6 chiffres"
+                  />
+                  <FormText>
+                    Code non reçu ? <a href="#">Renvoyez le code</a>.
+                  </FormText>
+                </FormGroup>
+                <Button
+                  size="lg"
+                  variant="primary"
+                  onClick={handleSubmit}
+                  block
+                >
+                  Confirmer
+                </Button>
+              </Form>
+            </div>
+          </Col>
         </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <MainFormGroup
-          controlId="basicNumberForm"
-          label="Entrez le code de validation"
-          size="md"
-          type="code"
-          placeholder="Entrez le code à 6 chiffres"
-        />
-        <p>
-          Code non reçu ? <a href="#">Renvoyez le code</a>.
-        </p>
-        <MainButton to="/dashboard/settings/resetpassword/verificationpasswordcode/newpassword" />
-      </div>
-    </div>
+      </PageContent>
+    </Page>
   )
 }
 

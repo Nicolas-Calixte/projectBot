@@ -1,48 +1,63 @@
-import React from "react"
-import { Row } from "react-bootstrap"
+import React, { useCallback } from "react"
 import { useHistory } from "react-router-dom"
+import {
+  Button,
+  Col,
+  Form,
+  FormControl,
+  FormLabel,
+  FormText,
+  Row,
+} from "react-bootstrap"
 
-import MainBackButton from "../../../primaryComponents/MainBackButton"
-import MainButton from "../../../primaryComponents/MainButton"
-import MainFormGroup from "../../../primaryComponents/MainFormGroup"
-import MainTitle from "../../../primaryComponents/MainTitle"
+import Page, { PageContent, PageHeader } from "../../../Page"
 
 const VerificationEmailCodeSettings = () => {
   const history = useHistory()
-  const handleHistory = () => history.goBack()
+  const handleSubmit = useCallback(() => {
+    // if (creds === ok)
+
+    history.push(
+      "/dashboard/settings/reset-email/verification-email-code/new-email"
+    )
+  })
 
   return (
-    <div
-      style={{ display: "flex", alignItems: "center", flexDirection: "column" }}
-    >
-      <div>
-        <Row>
-          <MainBackButton onClick={handleHistory} />
-          <MainTitle title="Réinitialiser votre identifiant" />
+    <Page>
+      <PageHeader>Réinitialiser mon identifiant</PageHeader>
+      <PageContent className="d-flex align-items-center justify-content-center">
+        <Row className="mt-3">
+          <Col>
+            <div
+              style={{
+                minHeight: "60vh",
+              }}
+            >
+              <Form>
+                <FormLabel>Réinitialiser l'identifiant</FormLabel>
+                <FormControl
+                  controlId="formBasicNumber"
+                  size="md"
+                  type="number"
+                  placeholder="Rentrez votre code à 6 chiffres"
+                />
+                <FormText className="mb-3">
+                  Code non reçu ? <a href="#">Renvoyez un nouveau code</a>.
+                </FormText>
+                <Button
+                  size="lg"
+                  variant="primary"
+                  onClick={handleSubmit}
+                  block
+                >
+                  Confirmer
+                </Button>
+              </Form>
+            </div>
+          </Col>
         </Row>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          minHeight: "60vh",
-        }}
-      >
-        <MainFormGroup
-          controlId="formBasicNumber"
-          size="md"
-          label="Entrez le code de verification reçu"
-          type="code"
-          placeholder="Rentrez votre code à 6 chiffres"
-        />
-        <p>
-          Code non reçu ? <a href="#">Renvoyez un code</a>.
-        </p>
-        <MainButton to="/dashboard/settings/resetemail/verificationemailcode/newemail" />
-      </div>
-    </div>
+      </PageContent>
+    </Page>
   )
 }
 
