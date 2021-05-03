@@ -210,7 +210,8 @@ const SignUpPage = () => {
                       ) : null}
                     </FormGroup>
                   </Row>
-                  <FormGroup>
+
+                  <FormGroup className="d-flex align-items-center flex-column">
                     <FormCheck
                       value={values.terms}
                       onChange={handleChange}
@@ -219,7 +220,7 @@ const SignUpPage = () => {
                       name="terms"
                       id="terms-check"
                       label="I accept the terms and conditions."
-                      className="text-center mb-3"
+                      className="mb-3"
                     />
                     {touched.terms && errors.terms ? (
                       <h5 className="d-flex justify-content-center">
