@@ -18,34 +18,19 @@ const Dashboard = () => {
         <Col className="mt-3">
           <Row className="d-flex justify-content-center">
             <div style={{ borderBottom: "2px solid black" }}>
-              <Nav className="mb-2">
-                <NavItem style={{ marginRight: "5px" }}>
-                  <Button
-                    size="lg"
-                    variant="primary"
-                    onClick={handleTasks}
-                    block
-                  >
+              <Nav className="d-flex justify-content-center mb-2">
+                <NavItem className="mr-1 mt-1">
+                  <Button size="lg" variant="primary" onClick={handleTasks}>
                     Tâches
                   </Button>
                 </NavItem>
-                <NavItem style={{ marginRight: "5px" }}>
-                  <Button
-                    size="lg"
-                    variant="primary"
-                    onClick={handleAccounts}
-                    block
-                  >
+                <NavItem className="mr-1 mt-1">
+                  <Button size="lg" variant="primary" onClick={handleAccounts}>
                     Comptes
                   </Button>
                 </NavItem>
-                <NavItem>
-                  <Button
-                    size="lg"
-                    variant="primary"
-                    onClick={handleSettings}
-                    block
-                  >
+                <NavItem className="mt-1">
+                  <Button size="lg" variant="primary" onClick={handleSettings}>
                     Paramètres
                   </Button>
                 </NavItem>

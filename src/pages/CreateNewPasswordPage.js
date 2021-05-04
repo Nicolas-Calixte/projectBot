@@ -19,7 +19,7 @@ const CreateNewPasswordPage = () => {
   const history = useHistory()
 
   const initialValues = {
-    password: "",
+    newPassword: "",
     confirmPassword: "",
   }
 
@@ -28,7 +28,7 @@ const CreateNewPasswordPage = () => {
   )
 
   const schema = yup.object().shape({
-    password: yup
+    newPassword: yup
       .string()
       .matches(
         passwordRegex,
@@ -70,14 +70,14 @@ const CreateNewPasswordPage = () => {
                       values={values.password}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      name="password"
+                      name="newPassword"
                       size="lg"
                       type="password"
                       placeholder="Enter your new password"
                     />
-                    {touched.password && errors.password ? (
+                    {touched.newPassword && errors.newPassword ? (
                       <h5>
-                        <Badge variant="danger">{errors.password}</Badge>{" "}
+                        <Badge variant="danger">{errors.newPassword}</Badge>{" "}
                       </h5>
                     ) : null}
                   </FormGroup>

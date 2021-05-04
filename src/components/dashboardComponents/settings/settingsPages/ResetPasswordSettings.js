@@ -1,4 +1,6 @@
-import React, { useCallback } from "react"
+import React from "react"
+import { Formik } from "formik"
+import * as yup from "yup"
 import {
   Button,
   Col,
@@ -7,6 +9,7 @@ import {
   FormGroup,
   FormLabel,
   Row,
+  Badge,
 } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
@@ -14,12 +17,13 @@ import Page, { PageContent, PageHeader } from "../../../Page"
 
 const ResetPasswordSettings = () => {
   const history = useHistory()
-  const handleSubmit = useCallback(() => {
-    // if (creds === ok)
 
-    history.push(
-      "/dashboard/settings/reset-password/verification-password-code"
-    )
+  const initialValues = {
+    email: "",
+  }
+
+  const schema = yup.object().shape({
+    email: yup.string().email("Adresse email invalide").required("Obligatoire"),
   })
 
   return (
@@ -33,24 +37,48 @@ const ResetPasswordSettings = () => {
                 minHeight: "60vh",
               }}
             >
-              <Form>
-                <FormGroup controlId="basicEmailForm">
-                  <FormLabel>Identifiant</FormLabel>
-                  <FormControl
-                    size="md"
-                    type="email"
-                    placeholder="Entrez votre email ou n° de téléphone"
-                  />
-                </FormGroup>
-                <Button
-                  size="lg"
-                  variant="primary"
-                  onClick={handleSubmit}
-                  block
-                >
-                  Confirmer
-                </Button>
-              </Form>
+              <Formik
+                validationSchema={schema}
+                onSubmit={(values) => {
+                  alert(JSON.stringify(values))
+                  history.push(
+                    "/dashboard/settings/reset-password/verification-password-code"
+                  )
+                }}
+                initialValues={initialValues}
+              >
+                {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                }) => (
+                  <Form noValidate onSubmit={handleSubmit}>
+                    <FormGroup controlId="basicEmailForm">
+                      <FormLabel>Identifiant</FormLabel>
+                      <FormControl
+                        values={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        name="email"
+                        size="md"
+                        type="text"
+                        placeholder="Entrez votre email ou n° de téléphone"
+                      />
+                      {touched.email && errors.email ? (
+                        <h5>
+                          <Badge variant="danger">{errors.email}</Badge>{" "}
+                        </h5>
+                      ) : null}
+                    </FormGroup>
+                    <Button size="lg" variant="primary" type="submit" block>
+                      Confirmer
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
             </div>
           </Col>
         </Row>
