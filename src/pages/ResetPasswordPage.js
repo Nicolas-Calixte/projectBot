@@ -1,5 +1,7 @@
-import React, { useCallback } from "react"
+import React from "react"
 import { useHistory } from "react-router-dom"
+import { Formik } from "formik"
+import * as yup from "yup"
 import {
   Button,
   Col,
@@ -8,16 +10,20 @@ import {
   FormGroup,
   FormLabel,
   Row,
+  Badge,
 } from "react-bootstrap"
 
 import Page, { PageContent, PageHeader } from "../components/Page"
 
 const ResetPasswordPage = () => {
   const history = useHistory()
-  const handleSubmit = useCallback(() => {
-    // if (creds === ok)
 
-    history.push("/log-in/reset-password/verification-password-code")
+  const initialValues = {
+    email: "",
+  }
+
+  const schema = yup.object().shape({
+    email: yup.string().email("Invalid email adress").required("Required"),
   })
 
   return (
@@ -26,19 +32,48 @@ const ResetPasswordPage = () => {
       <PageContent className="d-flex align-items-center justify-content-center">
         <Row className="mt-3">
           <Col>
-            <Form>
-              <FormGroup controlId="usernameFormGroup">
-                <FormLabel>Username</FormLabel>
-                <FormControl
-                  size="md"
-                  type="email"
-                  placeholder="Enter your email adress or phone number"
-                />
-              </FormGroup>
-            </Form>
-            <Button size="lg" variant="primary" onClick={handleSubmit} block>
-              Confirm
-            </Button>
+            <Formik
+              validationSchema={schema}
+              onSubmit={(values) => {
+                alert(JSON.stringify(values))
+                history.push(
+                  "/log-in/reset-password/verification-password-code"
+                )
+              }}
+              initialValues={initialValues}
+            >
+              {({
+                values,
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+              }) => (
+                <Form noValidate onSubmit={handleSubmit}>
+                  <FormGroup controlId="usernameFormGroup">
+                    <FormLabel>Username</FormLabel>
+                    <FormControl
+                      values={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      name="email"
+                      size="md"
+                      type="text"
+                      placeholder="Enter your email adress"
+                    />
+                    {touched.email && errors.email ? (
+                      <h5>
+                        <Badge variant="danger">{errors.email}</Badge>{" "}
+                      </h5>
+                    ) : null}
+                  </FormGroup>
+                  <Button size="lg" variant="primary" type="submit" block>
+                    Confirm
+                  </Button>
+                </Form>
+              )}
+            </Formik>
           </Col>
         </Row>
       </PageContent>

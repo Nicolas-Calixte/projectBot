@@ -19,7 +19,7 @@ import Page, { PageContent, PageHeader } from "../components/Page"
 const SignUpPage = () => {
   const history = useHistory()
 
-  const InitialValues = {
+  const initialValues = {
     lastName: "",
     firstName: "",
     email: "",
@@ -83,7 +83,7 @@ const SignUpPage = () => {
               alert(JSON.stringify(values))
               history.push("/sign-up/sign-up-verification")
             }}
-            initialValues={InitialValues}
+            initialValues={initialValues}
           >
             {({
               values,
