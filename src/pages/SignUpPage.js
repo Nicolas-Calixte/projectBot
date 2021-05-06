@@ -137,7 +137,7 @@ const SignUpPage = () => {
                     <FormGroup controlId="formEmail">
                       <FormLabel>Email</FormLabel>
                       <FormControl
-                        value={values.email}
+                        values={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         name="email"
@@ -155,7 +155,7 @@ const SignUpPage = () => {
                     <FormGroup controlId="FormPhoneNumber">
                       <FormLabel>Phone number(optional)</FormLabel>
                       <FormControl
-                        value={values.phoneNumber}
+                        values={values.phoneNumber}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         name="phoneNumber"
@@ -175,7 +175,7 @@ const SignUpPage = () => {
                     <FormGroup controlId="FormGridPassword">
                       <FormLabel>Password</FormLabel>
                       <FormControl
-                        value={values.password}
+                        values={values.password}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         name="password"
@@ -193,7 +193,7 @@ const SignUpPage = () => {
                     <FormGroup controlId="FormGridPassword">
                       <FormLabel>Confirm password</FormLabel>
                       <FormControl
-                        value={values.confirmPassword}
+                        values={values.confirmPassword}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         name="confirmPassword"
@@ -213,7 +213,7 @@ const SignUpPage = () => {
 
                   <FormGroup className="d-flex align-items-center flex-column">
                     <FormCheck
-                      value={values.terms}
+                      values={values.terms}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       type="checkbox"
