@@ -5,7 +5,6 @@ import * as yup from "yup"
 import {
   Button,
   Col,
-  Dropdown,
   Form,
   FormCheck,
   FormControl,
@@ -14,9 +13,6 @@ import {
   Row,
   Badge,
 } from "react-bootstrap"
-import DropdownItem from "react-bootstrap/esm/DropdownItem"
-import DropdownMenu from "react-bootstrap/esm/DropdownMenu"
-import DropdownToggle from "react-bootstrap/esm/DropdownToggle"
 
 import Page, { PageContent, PageHeader } from "../../Page"
 
@@ -24,7 +20,6 @@ const NewTask = () => {
   const history = useHistory()
 
   const initialValues = {
-    shop: false,
     productUrl: "",
     quantity: "",
     street: "",
@@ -35,7 +30,6 @@ const NewTask = () => {
   const numbersRegex = new RegExp(/^\d+$/)
 
   const schema = yup.object().shape({
-    shop: yup.bool().required("Obligatoire"),
     productUrl: yup.string().url("URL invalide").required("Obligatoire"),
     quantity: yup
       .string()
@@ -77,47 +71,31 @@ const NewTask = () => {
                 }) => (
                   <Form noValidate onSubmit={handleSubmit}>
                     <div className="d-flex justify-content-center">
-                      <Dropdown>
-                        <DropdownToggle variant="primary" id="dropdownShop">
-                          Magasin
-                        </DropdownToggle>
-
-                        <DropdownMenu id="shop-menu" title="Magasin">
-                          <DropdownItem
-                            values={values.shop}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            name="shop"
-                          >
-                            Cdiscount
-                          </DropdownItem>
-                          {touched.shop && errors.shop ? (
-                            <h5>
-                              <Badge variant="danger">{errors.shop}</Badge>{" "}
-                            </h5>
-                          ) : null}
-                        </DropdownMenu>
-                      </Dropdown>
+                      <div>
+                        <select className="browser-default custom-select">
+                          <option value="cdiscount">Cdiscount</option>
+                        </select>
+                      </div>
+                      {touched.shop && errors.shop ? (
+                        <h5>
+                          <Badge variant="danger">{errors.shop}</Badge>{" "}
+                        </h5>
+                      ) : null}
                     </div>
                     <FormGroup>
-                      <div
-                        key={"default"}
-                        className="d-flex space-around flex-direction-row mt-5 mb-4"
-                      >
+                      <div className="d-flex justify-content-between mt-5 mb-4">
                         <FormCheck
                           name="createAccountMode"
                           type="radio"
-                          id="create-account"
                           label="Créer un nouveau compte"
-                          style={{ marginRight: "13px" }}
-                          className="mr-2"
+                          className="mr-1"
                         />
 
                         <FormCheck
-                          name="InvitedMode"
+                          name="createAccountMode"
                           type="radio"
-                          id="lauch-as-invited"
-                          label="Executer tant qu'invité"
+                          label="Executer en tant qu'invité"
+                          defaultChecked
                         />
                       </div>
                     </FormGroup>
@@ -168,7 +146,7 @@ const NewTask = () => {
                           name="street"
                           size="sm"
                           type="text"
-                          placeholder="Rentrez l'adresse de votre domicile"
+                          placeholder="ex: 12 rue de la Paix"
                         />
                         {touched.street && errors.street ? (
                           <h5>
@@ -186,7 +164,7 @@ const NewTask = () => {
                           name="city"
                           size="sm"
                           type="text"
-                          placeholder="Rentrez le nom de votre ville"
+                          placeholder="ex: Créteil"
                         />
                         {touched.city && errors.city ? (
                           <h5>
@@ -204,7 +182,7 @@ const NewTask = () => {
                           name="zipcode"
                           size="sm"
                           type="text"
-                          placeholder="Rentrez le code postal de votre ville"
+                          placeholder="ex: 94000"
                         />
                         {touched.zipcode && errors.zipcode ? (
                           <h5>
@@ -213,28 +191,14 @@ const NewTask = () => {
                         ) : null}
                       </FormGroup>
                     </div>
-                    <FormGroup>
-                      <div
-                        key={"default"}
-                        className="d-flex space-between flex-direction-row mb-5"
-                      >
-                        <FormCheck
-                          name="lauchNow"
-                          type="radio"
-                          id="launch-now"
-                          label="Lancer la tâche maintenant"
-                          className="mr-2"
-                        />
 
-                        <FormCheck
-                          name="lauchLater"
-                          type="radio"
-                          label="Lancer la tâche plus tard"
-                          id="launch-later"
-                        />
-                      </div>
-                    </FormGroup>
-                    <Button size="lg" variant="primary" type="submit" block>
+                    <Button
+                      size="lg"
+                      variant="primary"
+                      type="submit"
+                      className="mt-4"
+                      block
+                    >
                       Confirmer
                     </Button>
                   </Form>

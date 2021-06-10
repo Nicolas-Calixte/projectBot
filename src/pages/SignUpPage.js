@@ -218,7 +218,6 @@ const SignUpPage = () => {
                       onBlur={handleBlur}
                       type="checkbox"
                       name="terms"
-                      id="terms-check"
                       label="I accept the terms and conditions."
                       className="mb-3"
                     />

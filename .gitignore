@@ -6,6 +6,8 @@
 .pnp.js
 .settings.json
 .vscode
+prettier.config.js
+.gitignore
 
 # testing
 /coverage
