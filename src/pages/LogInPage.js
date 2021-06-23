@@ -24,13 +24,15 @@ const LogInPage = () => {
   }
 
   const passwordRegex = new RegExp(
-    /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/
+    /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d).*$/
   )
 
   const schema = yup.object().shape({
     email: yup.string().email("Invalid email adress").required("Required"),
     password: yup
       .string()
+      .min(3, "Invalid password")
+      .max(32, "Invalid Password")
       .matches(passwordRegex, "Invalid password")
       .required("Required"),
   })

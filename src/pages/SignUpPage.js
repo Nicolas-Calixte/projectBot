@@ -15,6 +15,7 @@ import {
 } from "react-bootstrap"
 
 import Page, { PageContent, PageHeader } from "../components/Page"
+import RequiredSign from "../components/RequiredSign"
 
 const SignUpPage = () => {
   const history = useHistory()
@@ -34,7 +35,7 @@ const SignUpPage = () => {
   )
   const phoneNumberRegex = new RegExp(/^((\+|00)33\s?|0)[67](\s?\d{2}){4}$/)
   const passwordRegex = new RegExp(
-    /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/
+    /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d).*$/
   )
 
   const schema = yup.object().shape({
@@ -57,9 +58,11 @@ const SignUpPage = () => {
       .notRequired(),
     password: yup
       .string()
+      .min(7, "Your password is too short")
+      .max(32, "Your password is too long")
       .matches(
         passwordRegex,
-        "Your password must contain 8 characters, 1 Uppercase, 1 Lowercase, 1 Number and 1 special case character"
+        "Your password must contain 1 number and 1 special case character"
       )
       .required("Required"),
     confirmPassword: yup
@@ -97,7 +100,10 @@ const SignUpPage = () => {
                 <Col>
                   <Row className="mt-2">
                     <FormGroup controlId="formLastName">
-                      <FormLabel>Lastname</FormLabel>
+                      <FormLabel>
+                        Lastname
+                        <RequiredSign />{" "}
+                      </FormLabel>
                       <FormControl
                         value={values.lastName}
                         onChange={handleChange}
@@ -115,7 +121,10 @@ const SignUpPage = () => {
                     </FormGroup>
 
                     <FormGroup controlId="formFirstname">
-                      <FormLabel>Firstname</FormLabel>
+                      <FormLabel>
+                        Firstname
+                        <RequiredSign />
+                      </FormLabel>
                       <FormControl
                         value={values.firstName}
                         onChange={handleChange}
@@ -135,7 +144,10 @@ const SignUpPage = () => {
 
                   <Row className="mt-2">
                     <FormGroup controlId="formEmail">
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>
+                        Email
+                        <RequiredSign />{" "}
+                      </FormLabel>
                       <FormControl
                         values={values.email}
                         onChange={handleChange}
@@ -153,7 +165,7 @@ const SignUpPage = () => {
                     </FormGroup>
 
                     <FormGroup controlId="FormPhoneNumber">
-                      <FormLabel>Phone number(optional)</FormLabel>
+                      <FormLabel>Phone number</FormLabel>
                       <FormControl
                         values={values.phoneNumber}
                         onChange={handleChange}
@@ -173,7 +185,10 @@ const SignUpPage = () => {
 
                   <Row className="mt-2">
                     <FormGroup controlId="FormGridPassword">
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>
+                        Password
+                        <RequiredSign />
+                      </FormLabel>
                       <FormControl
                         values={values.password}
                         onChange={handleChange}
@@ -191,7 +206,10 @@ const SignUpPage = () => {
                     </FormGroup>
 
                     <FormGroup controlId="FormGridPassword">
-                      <FormLabel>Confirm password</FormLabel>
+                      <FormLabel>
+                        Confirm password
+                        <RequiredSign />{" "}
+                      </FormLabel>
                       <FormControl
                         values={values.confirmPassword}
                         onChange={handleChange}

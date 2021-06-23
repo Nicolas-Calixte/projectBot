@@ -1,5 +1,6 @@
-import React from "react"
-import { Route, Switch } from "react-router-dom"
+import React, { useEffect } from "react"
+import { Route, Switch, useHistory } from "react-router-dom"
+import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import LogInPage from "./pages/LogInPage"
@@ -26,8 +27,13 @@ import LogOut from "./components/dashboardComponents/settings/settingsPages/LogO
 import Account from "./components/dashboardComponents/Account"
 
 const App = () => {
+  const history = useHistory()
+  useEffect(() => {
+    history.push("/log-in")
+  })
+
   return (
-    <div>
+    <div className="App">
       <Switch>
         <Route exact path="/log-in" component={LogInPage} />
         <Route exact path="/sign-up" component={SignUpPage} />
