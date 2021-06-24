@@ -62,7 +62,10 @@ const ResetEmailSettings = () => {
                   handleSubmit,
                 }) => (
                   <Form noValidate onSubmit={handleSubmit}>
-                    <FormGroup controlId="basicPhoneNumberForm">
+                    <FormGroup
+                      controlId="basicPhoneNumberForm"
+                      className="mt-2"
+                    >
                       <FormLabel>Entrez votre n° de téléphone</FormLabel>
                       <FormControl
                         values={values.phoneNumber}

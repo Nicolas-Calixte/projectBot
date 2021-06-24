@@ -75,10 +75,7 @@ const SignUpPage = () => {
   return (
     <Page>
       <PageHeader>Sign Up</PageHeader>
-      <PageContent
-        style={{ minHeight: "60vh" }}
-        className="d-flex align-items-center justify-content-center gy-3"
-      >
+      <PageContent className="d-flex align-items-center justify-content-center gy-3">
         <div>
           <Formik
             validationSchema={schema}
@@ -97,8 +94,8 @@ const SignUpPage = () => {
               touched,
             }) => (
               <Form noValidate onSubmit={handleSubmit}>
-                <Col>
-                  <Row className="mt-2">
+                <Col className="">
+                  <Row className="d-flex justify-content-center mt-2">
                     <FormGroup controlId="formLastName">
                       <FormLabel>
                         Lastname
@@ -142,7 +139,7 @@ const SignUpPage = () => {
                     </FormGroup>
                   </Row>
 
-                  <Row className="mt-2">
+                  <Row className="d-flex justify-content-center mt-2">
                     <FormGroup controlId="formEmail">
                       <FormLabel>
                         Email
@@ -183,8 +180,8 @@ const SignUpPage = () => {
                     </FormGroup>
                   </Row>
 
-                  <Row className="mt-2">
-                    <FormGroup controlId="FormGridPassword">
+                  <Row className="d-flex justify-content-center mt-2">
+                    <FormGroup controlId="FormPassword">
                       <FormLabel>
                         Password
                         <RequiredSign />
@@ -205,7 +202,7 @@ const SignUpPage = () => {
                       ) : null}
                     </FormGroup>
 
-                    <FormGroup controlId="FormGridPassword">
+                    <FormGroup controlId="FormConfirmPassword">
                       <FormLabel>
                         Confirm password
                         <RequiredSign />{" "}

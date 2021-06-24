@@ -27,20 +27,20 @@ const NewTask = () => {
     zipcode: "",
   }
 
-  const numbersRegex = new RegExp(/^\d+$/)
+  const zipcodeRegex = new RegExp(/^\d+$/)
 
   const schema = yup.object().shape({
     productUrl: yup.string().url("URL invalide").required("Obligatoire"),
     quantity: yup
       .string()
-      .matches(numbersRegex, "Ce champs doit contenir un chiffre")
+      .matches(zipcodeRegex, "Ce champs doit contenir un chiffre")
       .max(2, "maximum: 99")
       .required("Obligatoire"),
     street: yup.string().required("Obligatoire"),
     city: yup.string().required("Obligatoire"),
     zipcode: yup
       .string()
-      .matches(numbersRegex, "Ce champs doit contenir un nombre")
+      .matches(zipcodeRegex, "Ce champs doit contenir un nombre")
       .min(5, "Code postal invalide")
       .max(5, "Code postal invalide")
       .required("Obligatoire"),
@@ -76,11 +76,6 @@ const NewTask = () => {
                           <option value="cdiscount">Cdiscount</option>
                         </select>
                       </div>
-                      {touched.shop && errors.shop ? (
-                        <h5>
-                          <Badge variant="danger">{errors.shop}</Badge>{" "}
-                        </h5>
-                      ) : null}
                     </div>
                     <FormGroup>
                       <div className="d-flex justify-content-between mt-5 mb-4">

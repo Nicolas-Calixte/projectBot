@@ -108,7 +108,7 @@ const LogInPage = () => {
                   </Button>
                 </Col>
               </Row>
-              <Row className="text-center mb-4">
+              <Row className="text-center mb-4 mt-2">
                 <Col>
                   Don't have an account? <Link to="/sign-up">Sign up</Link>!
                 </Col>
